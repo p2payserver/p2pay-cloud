@@ -32,7 +32,7 @@ export default defineNuxtConfig({
       type: 'authjs'
     },
     baseUrl: `${deploymentDomain}/api/auth`,
-    // addDefaultCallbackUrl: `${deploymentDomain}/dashboard`,
+    addDefaultCallbackUrl: true,
     globalAppMiddleware: true,
   }
 });
