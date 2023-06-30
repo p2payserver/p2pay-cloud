@@ -1,7 +1,7 @@
 const isDev = process.env.NODE_ENV !== 'production'
 const isDeployed = (process.env.CYCLIC_URL) ? true : false
 const deploymentDomain = (isDeployed) ? `https://${process.env.CYCLIC_URL}` : 'http://localhost:3000'
-
+console.log('deploymentDomain', deploymentDomain)
 export default defineNuxtConfig({
 
   runtimeConfig: {
