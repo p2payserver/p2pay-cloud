@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxi build",
+    "start": "nuxi start",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "prod": "nuxi generate && nuxi start"
+  },
+  "devDependencies": {
+    "nuxt": "^3.6.1"
+  }
+}
