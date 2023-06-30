@@ -7,5 +7,5 @@ const {
   }
 } = useRuntimeConfig();
 
-await signIn(undefined, ) // { callbackUrl: `${deploymentDomain}/dashboard` }
+await signIn(undefined, { callbackUrl: `/dashboard` })
 </script>
