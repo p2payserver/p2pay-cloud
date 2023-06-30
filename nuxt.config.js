@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   ],
 
   auth: {
-    origin: deploymentDomain,
+    origin: 'https://outrageous-ox-hat.cyclic.app', // deploymentDomain,
     globalAppMiddleware: true
   }
 });
