@@ -1,8 +1,14 @@
 const isDev = process.env.NODE_ENV !== 'production'
 const isDeployed = (process.env.CYCLIC_URL) ? true : false
 const deploymentDomain = (isDeployed) ? `https://${process.env.CYCLIC_URL}` : 'http://localhost:3000'
-console.log('deploymentDomain', deploymentDomain)
+
 export default defineNuxtConfig({
+
+  routeRules: {
+    '/**': {
+      static: false
+    }
+  },
 
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
@@ -13,6 +19,7 @@ export default defineNuxtConfig({
     marangaduPort: process.env.MARANGADU_PORT,
     marangaduFrom: process.env.MARANGADU_FROM,
     public: {
+      deploymentDomain
     }
   },
 
@@ -21,7 +28,11 @@ export default defineNuxtConfig({
   ],
 
   auth: {
-    origin: 'https://outrageous-ox-hat.cyclic.app', // deploymentDomain,
-    globalAppMiddleware: true
+    provider: {
+      type: 'authjs'
+    },
+    baseUrl: `${deploymentDomain}/api/auth`,
+    // addDefaultCallbackUrl: `${deploymentDomain}/dashboard`,
+    globalAppMiddleware: true,
   }
 });

@@ -6,7 +6,7 @@
     "dev": "nuxi dev",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
-    "prod": "nuxi generate && nuxi start"
+    "prod": "nuxi build && nuxi start"
   },
   "devDependencies": {
     "@sidebase/nuxt-auth": "^0.6.0-beta.3",
