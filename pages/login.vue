@@ -5,7 +5,7 @@ data.value // Session data, e.g., expiration, user.email, ...
 
 const email = ref(null);
 
-await signIn() // Sign in the user
+await signIn(undefined, { callbackUrl: '/dashboard' }) // Sign in the user
 await signOut() // Sign out the user
 </script>
 
