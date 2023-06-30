@@ -1,6 +1,4 @@
-const isDev = process.env.NODE_ENV !== 'production'
-const isDeployed = (process.env.CYCLIC_URL) ? true : false
-const deploymentDomain = (isDeployed) ? `https://${process.env.CYCLIC_URL}` : 'http://localhost:3000'
+const deploymentDomain = process.env.NEXTAUTH_URL
 
 export default defineNuxtConfig({
 

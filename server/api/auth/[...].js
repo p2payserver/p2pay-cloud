@@ -24,8 +24,8 @@ export default NuxtAuthHandler({
   secret: nextAuthSecret,
   providers: [
     EmailProvider.default({
-      id: 'marangaduEmailMagicLink',
-      name: 'magic link sent by email with marangadu',
+      id: 'magic-link',
+      name: 'send magic link by email',
       type: 'email',
       // sendVerificationRequest	Callback to execute when a verification request is sent	(params) => Promise<undefined>	Yes
       server: {
