@@ -2,21 +2,20 @@ import { locales } from '~/assets/js/locales';
 
 export default defineNuxtPlugin(async nuxtApp => {
 
-  const loginTranslatedStrings = await import.meta.glob('../lang/login/*.json',  {
-    import: 'default',
-    as: 'raw',
-    eager: true
-  });
-
-  const obj = {}
+  const allTranslations = {}
   for (const locale of locales) {
-    obj[locale.code] = JSON.parse(loginTranslatedStrings[`../lang/login/${locale.code}.json`])
+    const file = await import (`../lang/${locale.code}.js`);
+    const translation = {};
+    for (const key in file.default.login) {
+      translation[key] = file.default.login[key].source;
+    }
+    allTranslations[locale.code] = translation;
   };
 
   return {
     provide: {
       importStrings: (locale) => {
-        return obj[locale]
+        return allTranslations[locale]
       },
     }
   };

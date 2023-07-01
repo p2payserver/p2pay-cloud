@@ -1,3 +1,7 @@
 export default {
-  welcome: 'Bienvenido'
+  welcome: 'Bienvenido',
+  login: {
+    magicLink: 'Enlache magico',
+    emailSent: 'Correo enviado'
+  }
 }
