@@ -21,6 +21,10 @@ const client = new faunadb.Client({
 });
 
 export default NuxtAuthHandler({
+  pages: {
+    signIn: `/auth/login`,
+    verifyRequest: `/auth/verify`,
+  },
   secret: nextAuthSecret,
   providers: [
     EmailProvider.default({
@@ -42,16 +46,3 @@ export default NuxtAuthHandler({
   ],
   adapter: myLoginAdapter(client)
 });
-
-
-// import faunadb from 'faunadb'
-
-// const client = new faunadb.Client({ 
-//   secret: faunaSecret,
-//   scheme: "https",
-//   domain: "db.fauna.com",
-//   port: 443,
-// })
-// const q = faunadb.query
-
-// export { client, q }

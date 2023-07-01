@@ -29,14 +29,10 @@ const collections = {
 };
 
 const indexes = {
-  AccountByProviderAndProviderAccountId: Index(
-    "account_by_provider_and_provider_account_id"
-  ),
+  AccountByProviderAndProviderAccountId: Index("account_by_provider_and_provider_account_id"),
   UserByEmail: Index("user_by_email"),
   SessionByToken: Index("session_by_session_token"),
-  VerificationTokenByIdentifierAndToken: Index(
-    "verification_token_by_identifier_and_token"
-  ),
+  VerificationTokenByIdentifierAndToken: Index("verification_token_by_identifier_and_token"),
   SessionsByUser: Index("sessions_by_user_id"),
   AccountsByUser: Index("accounts_by_user_id"),
 };

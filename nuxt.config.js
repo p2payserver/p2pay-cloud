@@ -1,13 +1,12 @@
+import {
+  locales,
+  defaultLocale,
+} from './assets/js/locales'
+
 const deploymentDomain = process.env.NEXTAUTH_URL
 
 export default defineNuxtConfig({
-
-  routeRules: {
-    '/**': {
-      static: false
-    }
-  },
-
+  
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
     faunaSecret: process.env.FAUNA_SECRET,
@@ -22,8 +21,23 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxtjs/i18n',
     '@sidebase/nuxt-auth'
   ],
+
+  i18n: {
+    baseUrl: deploymentDomain,
+    locales,
+    defaultLocale,
+    lazy: true,
+    langDir: 'lang',
+    strategy: 'prefix',
+    detectBrowserLanguage: {
+      useCookie: false,
+      redirectOnRoot: true,
+      alwaysRedirect: true,
+    }
+  },
 
   auth: {
     provider: {
