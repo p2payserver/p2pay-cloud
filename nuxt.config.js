@@ -6,6 +6,10 @@ import {
 const deploymentDomain = process.env.NEXTAUTH_URL
 
 export default defineNuxtConfig({
+
+  css: [
+    '~/assets/scss/main.scss',
+  ],
   
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,

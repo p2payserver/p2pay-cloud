@@ -85,7 +85,7 @@ const query = (f, format) => {
   }
 };
 
-export const myLoginAdapter = (f) => {
+export const customFaunadbAdapter = (f) => {
   const { Users, Accounts, Sessions, VerificationTokens } = collections
   const {
     AccountByProviderAndProviderAccountId,

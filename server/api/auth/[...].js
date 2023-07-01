@@ -1,7 +1,7 @@
 import { NuxtAuthHandler } from '#auth';
 import EmailProvider from "next-auth/providers/email";
 import faunadb from "faunadb";
-import { myLoginAdapter } from '../../../assets/js/myLoginAdapter';
+import { customFaunadbAdapter } from '~/assets/js/customFaunadbAdapter';
 
 const {
   nextAuthSecret, 
@@ -44,5 +44,5 @@ export default NuxtAuthHandler({
       maxAge: 60 * 60 // validity of the link in secods, default is 24 hours (24 * 60 * 60)
     })
   ],
-  adapter: myLoginAdapter(client)
+  adapter: customFaunadbAdapter(client)
 });

@@ -1,5 +1,4 @@
 <script setup>
-
 const {
   locale: {
     value: defaultLocale
@@ -7,28 +6,52 @@ const {
 } = useI18n();
 
 const { query } = useRoute();
-const locale = (query.callbackUrl) ? query.callbackUrl.split('/')[3] : defaultLocale;
+
+const locale = (query && query.callbackUrl) ? query.callbackUrl.split('/')[3] : defaultLocale;
 
 definePageMeta({
+  layout: "auth",
   auth: {
     unauthenticatedOnly: true,
-    navigateAuthenticatedTo: (query) => (query && query.callbackUrl) ? `${locale}/dashboard` : '/dashboard',
+    navigateAuthenticatedTo: (locale) => `${locale}/dashboard`
   }
 });
 
 const { signIn , getProviders } = useAuth();
 
-const providers = await getProviders();
+// const providers = await getProviders();
 
-const email = ref(null);
+const form = ref({
+  loginEmail: '',
+});
+
+const validationSchema = {
+  loginEmail: {
+    loginRequired: locale,
+    loginEmail: locale
+  }
+}
+
+const {
+  public: {
+    deploymentDomain
+  }
+} = useRuntimeConfig();
 
 const mySignInHandler = async () => {
-  const { error, url } = await signIn('magic-link', { email: email.value, callbackUrl: `/dashboard`, redirect: false })
+
+  const { error, url } = await signIn(undefined, {
+    email: form.value.loginEmail,
+    // callbackUrl: 'http://localhost:3000/es/dashboard' // (callbackUrl) ? `${deploymentDomain}/${locale}/dashboard` : `${deploymentDomain}/dashboard`
+  });
+
   if (error) {
-    // Do your custom error handling here
-    alert(error)
+
+    alert(error);
+
   } else {
-    alert(url)
+
+    alert(url);
     // No error, continue with the sign in, e.g., by following the returned redirect:
     return navigateTo(url, { external: true })
   }
@@ -36,14 +59,48 @@ const mySignInHandler = async () => {
 
 const { $importStrings } = useNuxtApp();
 const loginStrings = $importStrings(locale);
-const { magicLink } = loginStrings;
+const { loginEmail, magicLink } = loginStrings;
 </script>
 
 <template>
-  <div>
-    <input v-model="email" />
-    <button @click.prevent="signIn(undefined, { email, callbackUrl: `/${locale}/dashboard` })">{{ magicLink }}</button>
-    <div>{{ providers }}</div>
+  <NuxtLayout>
+    <div class="">
+    <VForm
+      name="login"
+      :validation-schema="validationSchema"
+      @submit="mySignInHandler"
+    >
+      <VField
+        name="loginEmail"
+        :label="loginEmail"
+        v-slot="{ handleChange, handleBlur, value, errors }"
+        v-model="form.loginEmail"
+      >
+        <OField
+          :label="loginEmail"
+          :variant="errors[0] ? 'danger' : null"
+          :message="errors[0] ? errors[0] : ''"
+        >
+          <OInput
+            :label="loginEmail"
+            :model-value="value"
+            @update:modelValue="handleChange"
+            @change="handleChange"
+            @blur="handleBlur"
+            expanded
+          />
+        </OField>
+      </VField>
+
+      <OField>
+        <OButton
+          native-type="submit"
+        >{{ magicLink }}</OButton>
+      </OField>
+      </VForm>
+
+    <!-- <pre>{{ providers }}</pre> -->
   </div>
+  </NuxtLayout>
 </template>
 

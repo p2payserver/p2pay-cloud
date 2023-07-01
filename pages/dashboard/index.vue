@@ -1,11 +1,11 @@
 <script setup>
-const { status, data, signOut } = useAuth()
-
 definePageMeta({
   layout: "dashboard",
 });
 
-const email = ref(null)
+const { status, data, signOut } = useAuth();
+
+const email = ref(null);
 
 const getEmail = async () => {
   const user = await $fetch('/api/dashboard/user', {
@@ -13,18 +13,18 @@ const getEmail = async () => {
   })
   email.value = user.email
   return user
-}
+};
 
 const logOut = async () => {
-  await signOut()
-}
+  await signOut();
+};
 </script>
 
 <template>
   <NuxtLayout>
     <div><h1>This is the dashboard page</h1></div>
     <div><button @click="getEmail">Get user</button></div>
-    <div><NuxtLink to="/">Go to home</NuxtLink></div>
+    <div><NuxtLink :to="localePath('/')">Go to home</NuxtLink></div>
     <div>{{ email }}</div>
     <div><button @click="logOut">logout</button></div>
     <div>Status: {{ status }}</div>
