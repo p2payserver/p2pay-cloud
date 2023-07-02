@@ -59,7 +59,7 @@ const signInHandler = async () => {
 };
 
 const { $importAuthStringss } = useNuxtApp();
-const { loginEmail, magicLink } = $importAuthStringss(locale);
+const { loginEmail, magicLink, magicLinkInstructions } = $importAuthStringss(locale);
 </script>
 
 <template>
@@ -87,6 +87,7 @@ const { loginEmail, magicLink } = $importAuthStringss(locale);
             @update:modelValue="handleChange"
             @change="handleChange"
             @blur="handleBlur"
+            placeholder="satoshin@gmx.com"
             expanded
           />
         </OField>
@@ -95,12 +96,15 @@ const { loginEmail, magicLink } = $importAuthStringss(locale);
       <OField>
         <OButton
           native-type="submit"
+          expanded
         >{{ magicLink }}</OButton>
       </OField>
       </VForm>
+      <section class="section">
+        <div class="has-new-line">{{  magicLinkInstructions }}</div>
+      </section>
 
     <!-- <pre>{{ providers }}</pre> -->
   </div>
   </NuxtLayout>
 </template>
-
