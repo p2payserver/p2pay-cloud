@@ -20,6 +20,8 @@ const client = new faunadb.Client({
   port: 443,
 });
 
+const { $sendVerificationRequest } = useNuxtApp();
+
 export default NuxtAuthHandler({
   pages: {
     signIn: `/auth/login`,
@@ -31,7 +33,6 @@ export default NuxtAuthHandler({
       id: 'magic-link',
       name: 'send magic link by email',
       type: 'email',
-      // sendVerificationRequest	Callback to execute when a verification request is sent	(params) => Promise<undefined>	Yes
       server: {
         host: marangaduHost,
         port: marangaduPort,
@@ -41,7 +42,8 @@ export default NuxtAuthHandler({
         }
       },
       from: marangaduFrom,
-      maxAge: 60 * 60 // validity of the link in secods, default is 24 hours (24 * 60 * 60)
+      maxAge: 60 * 60,
+      sendVerificationRequest: $sendVerificationRequest
     })
   ],
   adapter: customFaunadbAdapter(client)
