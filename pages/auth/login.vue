@@ -1,15 +1,6 @@
 <script setup>
 import find from 'lodash.find';
-
-import {
-  locales,
-} from '~/assets/js/locales'
-
-const {
-  locale: {
-    value: defaultLocale
-  }
-} = useI18n();
+import { locales, defaultLocale } from '~/assets/js/locales'
 
 const { query } = useRoute();
 
@@ -68,8 +59,7 @@ const signInHandler = async () => {
 };
 
 const { $importStrings } = useNuxtApp();
-const loginStrings = $importStrings(locale);
-const { loginEmail, magicLink } = loginStrings;
+const { loginEmail, magicLink } = $importStrings(locale);
 </script>
 
 <template>
