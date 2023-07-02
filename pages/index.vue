@@ -1,5 +1,17 @@
 <script setup>
-definePageMeta({ auth: false });
+useHead({
+  title: 'Any Pay',
+  meta: [
+    {
+      name: 'description',
+      content: ``
+    },
+  ],
+});
+
+// definePageMeta({
+//   auth: false
+// });
 
 const {
     locale: {

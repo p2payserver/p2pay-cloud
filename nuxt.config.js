@@ -49,6 +49,6 @@ export default defineNuxtConfig({
     },
     baseUrl: `${deploymentDomain}/api/auth`,
     addDefaultCallbackUrl: true,
-    globalAppMiddleware: true,
+    // globalAppMiddleware: true,
   }
 });

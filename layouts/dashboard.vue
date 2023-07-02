@@ -25,6 +25,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+});
 const i18nHead = useLocaleHead({});
 
 useHead({
