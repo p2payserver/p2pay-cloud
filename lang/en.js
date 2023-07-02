@@ -1,7 +1,7 @@
 export default {
   welcome: 'Welcome',
   logout: 'Sign out',
-  login: {
+  auth: {
     loginEmail: 'Your email',
     magicLink: 'Magic Link',
     emailSent: 'Email sent',

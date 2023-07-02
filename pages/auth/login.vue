@@ -58,8 +58,8 @@ const signInHandler = async () => {
   }
 };
 
-const { $importStrings } = useNuxtApp();
-const { loginEmail, magicLink } = $importStrings(locale);
+const { $importAuthStrings } = useNuxtApp();
+const { loginEmail, magicLink } = $importAuthStrings(locale);
 </script>
 
 <template>

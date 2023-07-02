@@ -6,15 +6,15 @@ export default defineNuxtPlugin(async nuxtApp => {
   for (const locale of locales) {
     const file = await import (`../lang/${locale.code}.js`);
     const translation = {};
-    for (const key in file.default.login) {
-      translation[key] = file.default.login[key].source;
+    for (const key in file.default.auth) {
+      translation[key] = file.default.auth[key].source;
     }
     allTranslations[locale.code] = translation;
   };
 
   return {
     provide: {
-      importStrings: (locale) => {
+      importAuthStrings: (locale) => {
         return allTranslations[locale]
       },
     }
