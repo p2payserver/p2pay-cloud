@@ -2,6 +2,9 @@ import { NuxtAuthHandler } from '#auth';
 import EmailProvider from "next-auth/providers/email";
 import faunadb from "faunadb";
 import { customFaunadbAdapter } from '~/assets/js/customFaunadbAdapter';
+import nodemailer from 'nodemailer';
+import { locales, defaultLocale } from '~/assets/js/locales';
+import find from 'lodash.find';
 
 const {
   nextAuthSecret, 
@@ -19,8 +22,6 @@ const client = new faunadb.Client({
   domain: "db.fauna.com",
   port: 443,
 });
-
-const { $sendVerificationRequest } = useNuxtApp();
 
 export default NuxtAuthHandler({
   pages: {
@@ -43,7 +44,26 @@ export default NuxtAuthHandler({
       },
       from: marangaduFrom,
       maxAge: 60 * 60,
-      sendVerificationRequest: $sendVerificationRequest
+      sendVerificationRequest: async ({
+        identifier: email,
+        url,
+        provider: { server, from },
+      }) => {
+        const searchParams = new URLSearchParams(url.split('?')[1]);
+        const callbackUrl = searchParams.get("callbackUrl");
+        const locale = (callbackUrl && find(locales, { code: callbackUrl.split('/')[3] })) ? callbackUrl.split('/')[3] : defaultLocale;
+        const { $importString } = useNuxtApp();
+        const { emailSubject, emailContent } = $importString(locale);
+        const { host } = new URL(url)
+        const transport = nodemailer.createTransport(server)
+        await transport.sendMail({
+          to: email,
+          from,
+          subject: emailSubject.replace('{host}', host), // `Sign in to ${host}`,
+          text: emailContent.replace('{host}', host).replace('{url}', url)
+          // html:
+        })
+      },
     })
   ],
   adapter: customFaunadbAdapter(client)
