@@ -14,8 +14,8 @@ definePageMeta({
   }
 });
 
-const { $importAuthStrings } = useNuxtApp();
-const { emailSent, checkEmail } = $importAuthStrings(locale);
+const { $importAuthStringss } = useNuxtApp();
+const { emailSent, checkEmail } = $importAuthStringss(locale);
 </script>
 
 <template>

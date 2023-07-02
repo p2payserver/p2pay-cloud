@@ -52,14 +52,14 @@ export default NuxtAuthHandler({
         const searchParams = new URLSearchParams(url.split('?')[1]);
         const callbackUrl = searchParams.get("callbackUrl");
         const locale = (callbackUrl && find(locales, { code: callbackUrl.split('/')[3] })) ? callbackUrl.split('/')[3] : defaultLocale;
-        const { $importAuthString } = useNuxtApp();
-        const { emailSubject, emailContent } = $importAuthString(locale);
+        const { $importAuthStrings } = useNuxtApp();
+        const { emailSubject, emailContent } = $importAuthStrings(locale);
         const { host } = new URL(url)
         const transport = nodemailer.createTransport(server)
         await transport.sendMail({
           to: email,
           from,
-          subject: emailSubject.replace('{host}', host), // `Sign in to ${host}`,
+          subject: emailSubject.replace('{host}', host),
           text: emailContent.replace('{host}', host).replace('{url}', url)
           // html:
         })
