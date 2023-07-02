@@ -1,6 +1,11 @@
 export default {
   welcome: 'Welcome',
   logout: 'Sign out',
+  // error.vue
+  pageNotFound: 'This page could not be found',
+  unauthorized: 'Unauthorized',
+  somethingWentWrong: 'Something went wrong',
+  backToTheHomePage: 'Back to the home page',
   auth: {
     loginEmail: 'Your email',
     magicLink: 'Magic Link',

@@ -1,6 +1,11 @@
 export default {
   welcome: 'Benvenuto',
   logout: 'Esci',
+  // errorv.ue
+  pageNotFound: 'Pagina non trovata',
+  unauthorized: 'Non autorizzato',
+  somethingWentWrong: 'Qualcosa è andato storto',
+  backToTheHomePage: 'Tornare alla pagina principale',
   auth: {
     loginEmail: 'La tua email',
     magicLink: 'Collegamento magico',

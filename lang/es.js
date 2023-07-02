@@ -1,6 +1,11 @@
 export default {
   welcome: 'Bienvenido',
   logout: 'Salir',
+  // error.vue
+  pageNotFound: 'Esta página no se pudo encontrar',
+  unauthorized: 'No autorizado',
+  somethingWentWrong: 'Algo salió mal',
+  backToTheHomePage: 'Volver a la página de inicio',
   auth: {
     loginEmail: 'Tu correo',
     magicLink: 'Enlache magico',
