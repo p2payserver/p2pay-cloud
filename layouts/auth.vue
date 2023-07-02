@@ -10,7 +10,6 @@
       </div>
     </div>
   </div>
-  <LayoutFooter />
 </div>
 </template>
 
