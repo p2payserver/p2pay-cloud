@@ -1,4 +1,10 @@
 <script setup>
+import find from 'lodash.find';
+
+import {
+  locales,
+} from '~/assets/js/locales'
+
 const {
   locale: {
     value: defaultLocale
@@ -7,7 +13,7 @@ const {
 
 const { query } = useRoute();
 
-const locale = (query && query.callbackUrl) ? query.callbackUrl.split('/')[3] : defaultLocale;
+const locale = (query && query.callbackUrl && find(locales, { code: query.callbackUrl.split('/')[3] })) ? query.callbackUrl.split('/')[3] : defaultLocale;
 
 definePageMeta({
   layout: "auth",
@@ -38,11 +44,13 @@ const {
   }
 } = useRuntimeConfig();
 
-const mySignInHandler = async () => {
+const signInHandler = async () => {
 
-  const { error, url } = await signIn(undefined, {
+  try {
+    
+    const { error, url } = await signIn(undefined, {
     email: form.value.loginEmail,
-    // callbackUrl: 'http://localhost:3000/es/dashboard' // (callbackUrl) ? `${deploymentDomain}/${locale}/dashboard` : `${deploymentDomain}/dashboard`
+    callbackUrl: 'http://localhost:3000/es/dashboard' // (callbackUrl) ? `${deploymentDomain}/${locale}/dashboard` : `${deploymentDomain}/dashboard`
   });
 
   if (error) {
@@ -52,8 +60,10 @@ const mySignInHandler = async () => {
   } else {
 
     alert(url);
-    // No error, continue with the sign in, e.g., by following the returned redirect:
-    return navigateTo(url, { external: true })
+    return navigateTo(`/${locale}/verify`)
+  }
+  } catch (error) {
+    alert(error)
   }
 };
 
@@ -68,7 +78,7 @@ const { loginEmail, magicLink } = loginStrings;
     <VForm
       name="login"
       :validation-schema="validationSchema"
-      @submit="mySignInHandler"
+      @submit="signInHandler"
     >
       <VField
         name="loginEmail"
