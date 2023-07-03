@@ -1,13 +1,13 @@
 
 {
-  "Invoices": {
-    "Settings": "/dashboard/invoices/settings",
-    "Pending": "/dashboard/invoices/pending",
-    "Paid": "/dashboard/invoices/paid"
+  "menu.invoices": {
+    "menu.settings": "/dashboard/invoices/settings",
+    "menu.pending": "/dashboard/invoices/pending",
+    "menu.paid": "/dashboard/invoices/paid"
   },
-  "Booking": {
-    "Settings": "/dashboard/booking/settings",
-    "Pending": "/dashboard/booking/pending",
-    "Paid": "/dashboard/booking/paid"
+  "menu.booking": {
+    "menu.settings": "/dashboard/booking/settings",
+    "menu.pending": "/dashboard/booking/pending",
+    "menu.paid": "/dashboard/booking/paid"
   }
 }

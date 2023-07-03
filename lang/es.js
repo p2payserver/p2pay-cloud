@@ -1,6 +1,11 @@
 export default {
   menu: {
     dashboard: 'Panel de control',
+    invoices: 'Facturas',
+    booking: 'Reservas',
+    settings: 'Configuración',
+    pending: 'Pendientes',
+    paid: 'Pagadas'
   },
   welcome: 'Bienvenido',
   logout: 'Salir',

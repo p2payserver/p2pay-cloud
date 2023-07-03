@@ -1,6 +1,11 @@
 export default {
   menu: {
     dashboard: 'Dashboard',
+    invoices: 'Invoices',
+    booking: 'Bookings',
+    settings: 'Settings',
+    pending: 'Pending',
+    paid: 'Paid'
   },
   welcome: 'Welcome',
   logout: 'Sign out',

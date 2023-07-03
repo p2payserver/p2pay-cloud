@@ -37,10 +37,10 @@ onMounted(() => {
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <div v-for="el in Object.keys(dashboard)" :key="el" class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">{{ el }}</a>
-        <div v-for="item in  Object.keys(dashboard[el])" key="item" class="navbar-dropdown">
-          <NuxtLink :to="localePath(dashboard[el][item])" class="navbar-item">{{ item }}</NuxtLink>
+      <div v-for="main in Object.keys(dashboard)" :key="main" class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">{{ $t(main) }}</a>
+        <div v-for="item in  Object.keys(dashboard[main])" key="item" class="navbar-dropdown">
+          <NuxtLink :to="localePath(dashboard[main][item])" class="navbar-item">{{ $t(item) }}</NuxtLink>
         </div>
       </div>
     </div>
