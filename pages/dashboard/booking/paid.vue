@@ -6,5 +6,9 @@ definePageMeta({
 </script>
 
 <template>
-  <div>Booking Paid</div>
+  <NuxtLayout>
+    <section class="section is-medium">
+      <div class="title">{{ $t('dashboard.booking.paid')}}</div>
+    </section>
+  </NuxtLayout>
 </template>

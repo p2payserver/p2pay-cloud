@@ -1,12 +1,29 @@
 export default {
   menu: {
     dashboard: 'Panel de control',
-    invoices: 'Facturas',
+    invoices: 'Facturación',
     booking: 'Reservas',
     shop: 'Tienda',
     settings: 'Configuración',
     pending: 'Pendientes',
     paid: 'Pagadas'
+  },
+  dashboard: {
+    invoice: {
+      settings: 'Configuración de facturación',
+      pending: 'Facturas pendientes',
+      paid: 'Facturas pagadas'
+    },
+    booking: {
+      settings: 'Configuración de reservas',
+      pending: 'Reservas pendientes',
+      paid: 'Reservas pagadas'
+    },
+    shop: {
+      settings: 'Configuración de tienda',
+      pending: 'Copras pendientes',
+      paid: 'Compras pagadas'
+    }
   },
   welcome: 'Bienvenido',
   logout: 'Salir',

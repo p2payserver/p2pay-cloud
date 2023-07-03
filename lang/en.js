@@ -8,6 +8,23 @@ export default {
     pending: 'Pending',
     paid: 'Paid'
   },
+  dashboard: {
+    invoice: {
+      settings: 'Invoices settings',
+      pending: 'Pending invoices',
+      paid: 'Paid invoices'
+    },
+    booking: {
+      settings: 'Booking settings',
+      pending: 'Pending bookings',
+      paid: 'Paid bookings'
+    },
+    shop: {
+      settings: 'Shop settings',
+      pending: 'Pending purchases',
+      paid: 'Paid purchases'
+    }
+  },
   welcome: 'Welcome',
   logout: 'Sign out',
   // error.vue

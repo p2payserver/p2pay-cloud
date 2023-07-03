@@ -36,7 +36,9 @@ const head = useLocaleHead({
             </div>
             <div class="columns is-hidden-mobile">
               <nav class="column is-narrow">
-                <layoutSidebar />
+                <section class="section is-medium">
+                  <layoutSidebar />
+                </section>
               </nav>
               <div class="column">
                 <section class="section">

@@ -8,6 +8,23 @@ export default {
     pending: 'Pendenti',
     paid: 'Pagate'
   },
+  dashboard: {
+    invoice: {
+      settings: 'Configurazione della fatturazione',
+      pending: 'Fatture pendenti',
+      paid: 'Fatture pagate'
+    },
+    booking: {
+      settings: 'Configurazione delle prenotazioni',
+      pending: 'Prenotazioni pendenti',
+      paid: 'Prenotazioni pagate'
+    },
+    shop: {
+      settings: 'Configurazione del negozio',
+      pending: 'Acquisti pendenti',
+      paid: 'Acquisti pagati'
+    }
+  },
   welcome: 'Benvenuto',
   logout: 'Esci',
   // errorv.ue
