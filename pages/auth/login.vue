@@ -10,7 +10,7 @@ definePageMeta({
   layout: "auth",
   auth: {
     unauthenticatedOnly: true,
-    navigateAuthenticatedTo: (locale) => `${locale}/dashboard`
+    navigateAuthenticatedTo: (locale) => `/${locale}/dashboard`
   }
 });
 
@@ -41,7 +41,7 @@ const signInHandler = async () => {
     
     const { error, url } = await signIn(undefined, {
     email: form.value.loginEmail,
-    callbackUrl: 'http://localhost:3000/es/dashboard' // (callbackUrl) ? `${deploymentDomain}/${locale}/dashboard` : `${deploymentDomain}/dashboard`
+    callbackUrl: `${deploymentDomain}/${locale}/dashboard`
   });
 
   if (error) {

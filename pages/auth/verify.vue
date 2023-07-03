@@ -10,7 +10,7 @@ definePageMeta({
   layout: "auth",
   auth: {
     unauthenticatedOnly: true,
-    navigateAuthenticatedTo: (locale) => `${locale}/dashboard`
+    navigateAuthenticatedTo: (locale) => `/${locale}/dashboard`
   }
 });
 
