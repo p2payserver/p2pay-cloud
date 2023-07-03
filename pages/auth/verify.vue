@@ -4,7 +4,13 @@ import { locales, defaultLocale } from '~/assets/js/locales'
 
 const { query } = useRoute();
 
-const locale = (query && query.callbackUrl && find(locales, { code: query.callbackUrl.split('/')[3] })) ? query.callbackUrl.split('/')[3] : defaultLocale;
+const locale = (
+  query
+  && query.callbackUrl
+  && find(locales, { code: query.callbackUrl.split('/')[3] })
+)
+  ? query.callbackUrl.split('/')[3]
+  : defaultLocale;
 
 definePageMeta({
   layout: "auth",
