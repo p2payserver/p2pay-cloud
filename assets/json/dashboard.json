@@ -1,0 +1,13 @@
+
+{
+  "Invoices": {
+    "Settings": "/dashboard/invoices/settings",
+    "Pending": "/dashboard/invoices/pending",
+    "Paid": "/dashboard/invoices/paid"
+  },
+  "Booking": {
+    "Settings": "/dashboard/booking/settings",
+    "Pending": "/dashboard/booking/pending",
+    "Paid": "/dashboard/booking/paid"
+  }
+}

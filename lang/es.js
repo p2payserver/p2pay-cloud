@@ -1,4 +1,7 @@
 export default {
+  menu: {
+    dashboard: 'Panel de control',
+  },
   welcome: 'Bienvenido',
   logout: 'Salir',
   // error.vue

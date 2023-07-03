@@ -1,4 +1,7 @@
 export default {
+  menu: {
+    dashboard: 'Dashboard',
+  },
   welcome: 'Welcome',
   logout: 'Sign out',
   // error.vue

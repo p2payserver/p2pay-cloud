@@ -1,4 +1,7 @@
 export default {
+  menu: {
+    dashboard: 'Pannello di controllo',
+  },
   welcome: 'Benvenuto',
   logout: 'Esci',
   // errorv.ue
