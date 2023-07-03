@@ -20,11 +20,7 @@ const { emailSent, checkEmail } = $importAuthStringss(locale);
 
 <template>
   <NuxtLayout>
-    <p class="title">
-      {{ emailSent }}
-    </p>
-    <p class="subtitle">
-      {{ checkEmail }}
-    </p>
+    <p class="title">{{ emailSent }}</p>
+    <p class="subtitle">{{ checkEmail }}</p>
   </NuxtLayout>
 </template>
