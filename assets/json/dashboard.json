@@ -9,5 +9,10 @@
     "menu.settings": "/dashboard/booking/settings",
     "menu.pending": "/dashboard/booking/pending",
     "menu.paid": "/dashboard/booking/paid"
+  },
+  "menu.shop": {
+    "menu.settings": "/dashboard/booking/settings",
+    "menu.pending": "/dashboard/booking/pending",
+    "menu.paid": "/dashboard/booking/paid"
   }
 }

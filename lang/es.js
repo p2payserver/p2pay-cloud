@@ -3,6 +3,7 @@ export default {
     dashboard: 'Panel de control',
     invoices: 'Facturas',
     booking: 'Reservas',
+    shop: 'Tienda',
     settings: 'Configuración',
     pending: 'Pendientes',
     paid: 'Pagadas'

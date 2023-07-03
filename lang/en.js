@@ -3,6 +3,7 @@ export default {
     dashboard: 'Dashboard',
     invoices: 'Invoices',
     booking: 'Bookings',
+    shop: 'Shop',
     settings: 'Settings',
     pending: 'Pending',
     paid: 'Paid'
