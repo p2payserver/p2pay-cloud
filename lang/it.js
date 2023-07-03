@@ -27,11 +27,12 @@ export default {
   },
   welcome: 'Benvenuto',
   logout: 'Esci',
-  // errorv.ue
-  pageNotFound: 'Pagina non trovata',
-  unauthorized: 'Non autorizzato',
-  somethingWentWrong: 'Qualcosa è andato storto',
-  backToTheHomePage: 'Tornare alla pagina principale',
+  error: {
+    pageNotFound: 'Pagina non trovata',
+    unauthorized: 'Non autorizzato',
+    somethingWentWrong: 'Qualcosa è andato storto',
+    backToTheHomePage: 'Tornare alla pagina principale',
+  },
   auth: {
     loginEmail: 'Accesso',
     magicLink: 'Invia collegamento magico per email',
@@ -43,6 +44,6 @@ export default {
   },
   customRules: {
     loginRequired: 'L\'email è richiesta',
-    loginEmail: 'Fornisci un indirizzo email valido'
+    loginEmail: '{value} non è un indirizzo email valido'
   }
 }

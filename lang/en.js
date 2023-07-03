@@ -27,11 +27,12 @@ export default {
   },
   welcome: 'Welcome',
   logout: 'Sign out',
-  // error.vue
-  pageNotFound: 'This page could not be found',
-  unauthorized: 'Unauthorized',
-  somethingWentWrong: 'Something went wrong',
-  backToTheHomePage: 'Back to the home page',
+  error: {
+    pageNotFound: 'This page could not be found',
+    unauthorized: 'Unauthorized',
+    somethingWentWrong: 'Something went wrong',
+    backToTheHomePage: 'Back to the home page',
+  },
   auth: {
     loginEmail: 'Login',
     magicLink: 'Send the magic link by email',
@@ -43,6 +44,6 @@ export default {
   },
   customRules: {
     loginRequired: 'The email is required',
-    loginEmail: 'Provide a valid email address'
+    loginEmail: '{value} is not a valid email address'
   }
 }

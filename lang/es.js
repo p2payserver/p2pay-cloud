@@ -27,11 +27,12 @@ export default {
   },
   welcome: 'Bienvenido',
   logout: 'Salir',
-  // error.vue
-  pageNotFound: 'Esta página no se pudo encontrar',
-  unauthorized: 'No autorizado',
-  somethingWentWrong: 'Algo salió mal',
-  backToTheHomePage: 'Volver a la página de inicio',
+  error: {
+    pageNotFound: 'Esta página no se pudo encontrar',
+    unauthorized: 'No autorizado',
+    somethingWentWrong: 'Algo salió mal',
+    backToTheHomePage: 'Volver a la página de inicio',
+  },
   auth: {
     loginEmail: 'Iniciar sesión',
     magicLink: 'Enviar enlache magico por correo',
@@ -43,6 +44,6 @@ export default {
   },
   customRules: {
     loginRequired: 'El correo es requerido',
-    loginEmail: 'Proporcione un correo electronico valido'
+    loginEmail: '{value} no es un correo electronico valido'
   }
 }

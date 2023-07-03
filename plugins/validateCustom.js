@@ -44,7 +44,7 @@ export default defineNuxtPlugin(nuxtApp => {
   // We pass the locale from the callBackUrl passed as fake target
   defineRule('loginEmail', (value, [target]) => {
     const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (!regex.test(value)) return localizeMessages[target].messages.loginEmail;
+    if (!regex.test(value)) return localizeMessages[target].messages.loginEmail.replace('{value}', value);
     return true;
   })
 
