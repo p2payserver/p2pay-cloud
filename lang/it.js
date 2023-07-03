@@ -42,8 +42,11 @@ export default {
     emailSubject: 'Accedi a {host}',
     emailContent: 'Accedi al tuo account su {host} facendo clic sul link:\n\n{url}\n\nSe non hai richiesto questa e-mail puoi tranquillamente ignorarla.'
   },
+  // Custom rules which name starts with an underscore
+  // are not automatically imported in vee validate generateMessage
+  // but returned directly within the custom rule function
   customRules: {
-    loginRequired: 'L\'email è richiesta',
-    loginEmail: '{value} non è un indirizzo email valido'
+    loginEmailRequired: 'L\'email è richiesta',
+    loginEmailValid: '{value} non è un indirizzo email valido'
   }
 }

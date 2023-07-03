@@ -21,8 +21,8 @@ export default defineNuxtPlugin(nuxtApp => {
     const customRulesProps = Object.keys(customRulesJson);
 
     const messages = customRulesProps.reduce((obj, prop) => {
-      if (!prop.startsWith('_')) obj[prop] = customRulesJson[prop].source
-      return obj
+      if (!prop.startsWith('_')) obj[prop] = customRulesJson[prop].source;
+      return obj;
     }, {});
 
     obj[locale.code] = {
@@ -35,16 +35,16 @@ export default defineNuxtPlugin(nuxtApp => {
 
   // Define the custom rule for the required email at login (without native language localization)
   // We pass the locale from the callBackUrl passed as fake target
-  defineRule('loginRequired', (value, [target]) => {
-    if (!value) return localizeMessages[target].messages.loginRequired;
+  defineRule('loginEmailRequired', (value, [target]) => {
+    if (!value) return localizeMessages[target].messages.loginEmailRequired;
     return true;
   });
 
   // Define the custom rule for the valid email at login (without native language localization)
   // We pass the locale from the callBackUrl passed as fake target
-  defineRule('loginEmail', (value, [target]) => {
+  defineRule('loginEmailValid', (value, [target]) => {
     const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (!regex.test(value)) return localizeMessages[target].messages.loginEmail.replace('{value}', value);
+    if (!regex.test(value)) return localizeMessages[target].messages.loginEmailValid.replace('{value}', value);
     return true;
   })
 

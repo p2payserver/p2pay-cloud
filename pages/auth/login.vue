@@ -24,8 +24,8 @@ const form = ref({
 
 const validationSchema = {
   loginEmail: {
-    loginRequired: locale,
-    loginEmail: locale
+    loginEmailRequired: locale,
+    loginEmailValid: locale
   }
 }
 
