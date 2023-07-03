@@ -4,7 +4,7 @@ import dashboard from '~/assets/json/dashboard.json';
 const { signOut } = useAuth();
 
 const logOut = async () => {
-  await signOut()
+  await signOut();
 };
 </script>
 

@@ -33,8 +33,8 @@ export default {
   somethingWentWrong: 'Qualcosa è andato storto',
   backToTheHomePage: 'Tornare alla pagina principale',
   auth: {
-    loginEmail: 'Email',
-    magicLink: 'Invia Collegamento Magico',
+    loginEmail: 'Accesso',
+    magicLink: 'Invia collegamento magico per email',
     magicLinkInstructions: 'Non è richiesta alcuna password.\n\nTi invieremo un link magico per accedere via e-mail.\n\nSe utilizzi Slack, Notion o Wallet of Satoshi potresti avere familiarità con questo metodo di accesso.\n\nPer proteggere il tuo account, abilita 2FA sul tuo account e-mail.',
     emailSent: 'Email inviata',
     checkEmail: 'Clicca il link inviato per email per accedere al tuo account',
