@@ -1,5 +1,6 @@
 
-const isDeployed = (process.env.NEXTAUTH_URL) ? true : false;
+const isDeployed = (process.env.AUTH_ORIGIN) ? true : false;
+const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 
 import {
   locales,
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
     marangaduFrom: process.env.MARANGADU_FROM,
     public: {
       isDeployed,
-      deploymentDomain : process.env.NEXTAUTH_URL || 'http://localhost:3000'
+      deploymentDomain
     },
   },
 
@@ -46,6 +47,9 @@ export default defineNuxtConfig({
   },
 
   auth: {
+    // https://sidebase.io/nuxt-auth/v0.6/configuration/nuxt-auth-handler#nuxtauthhandler
+    origin: `${deploymentDomain}`,
+    // https://sidebase.io/nuxt-auth/v0.6/configuration/nuxt-config#module-nuxtconfigts
     baseUrl: `${deploymentDomain}/api/auth`,
     addDefaultCallbackUrl: true,
     provider: {
