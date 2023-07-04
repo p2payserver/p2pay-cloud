@@ -7,6 +7,7 @@ import { locales, defaultLocale } from '~/assets/js/locales';
 import find from 'lodash.find';
 
 const {
+  isDeployed,
   nextAuthSecret, 
   faunaSecret,
   marangaduUser,
@@ -24,6 +25,7 @@ const client = new faunadb.Client({
 });
 
 export default NuxtAuthHandler({
+  debug: (isDeployed) ? true : false,
   pages: {
     signIn: `/auth/login`,
     verifyRequest: `/auth/verify`,

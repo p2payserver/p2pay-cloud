@@ -1,9 +1,10 @@
+
+const isDeployed = (process.env.NEXTAUTH_URL) ? true : false;
+
 import {
   locales,
   defaultLocale,
-} from './assets/js/locales'
-
-const deploymentDomain = process.env.NEXTAUTH_URL
+} from './assets/js/locales';
 
 export default defineNuxtConfig({
 
@@ -20,8 +21,9 @@ export default defineNuxtConfig({
     marangaduPort: process.env.MARANGADU_PORT,
     marangaduFrom: process.env.MARANGADU_FROM,
     public: {
-      deploymentDomain
-    }
+      isDeployed,
+      deploymentDomain : process.env.NEXTAUTH_URL || 'http://localhost:3000'
+    },
   },
 
   modules: [
@@ -55,5 +57,7 @@ export default defineNuxtConfig({
       allow404WithoutAuth: true,
       addDefaultCallbackUrl: true
     },
-  }
+  },
+
+  debug: (isDeployed) ? true : false
 });
