@@ -44,11 +44,16 @@ export default defineNuxtConfig({
   },
 
   auth: {
-    provider: {
-      type: 'authjs'
-    },
     baseUrl: `${deploymentDomain}/api/auth`,
     addDefaultCallbackUrl: true,
-    // globalAppMiddleware: true,
+    provider: {
+      type: 'authjs',
+      addDefaultCallbackUrl: true
+    },
+    globalAppMiddleware: {
+      isEnabled: true,
+      allow404WithoutAuth: true,
+      addDefaultCallbackUrl: true
+    },
   }
 });
