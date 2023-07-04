@@ -18,7 +18,7 @@ export default defineNuxtPlugin(async nuxtApp => {
 
     const messages = authProps.reduce((stringsObject, prop) => {
       stringsObject[prop] = authJson[prop]({
-        normalize: (arr) => arr.map((_e, i) => arr[i]).join(),
+        normalize: (arr) => arr.map((_e, i) => arr[i]).join(''),
         interpolate: (str) => `{${str}}`,
         named: (str) => str
       });

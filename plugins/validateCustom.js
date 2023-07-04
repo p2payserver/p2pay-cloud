@@ -15,30 +15,30 @@ export default defineNuxtPlugin(nuxtApp => {
 
   // build the localization object
   // Load all the properties in the customRules object
-  const localizedStringsObject = locales.reduce((obj, locale) => {
+  const localizedStringsObject = locales.reduce((translationsObject, locale) => {
 
     const customRulesJson = modules[`../lang/${locale.code}.js`].customRules;
     const customRulesProps = Object.keys(customRulesJson);
 
-    const messages = customRulesProps.reduce((obj, prop) => {
-      obj[prop] = customRulesJson[prop]({
-        normalize: (arr) => arr.map((_e, i) => arr[i]).join(),
+    const messages = customRulesProps.reduce((stringsObject, prop) => {
+      stringsObject[prop] = customRulesJson[prop]({
+        normalize: (arr) => arr.map((_e, i) => {arr[i]}).join(''),
         interpolate: (str) => `{${str}}`,
         named: (str) => str
       });
 
-      return obj;
+      console.log(obj[prop])
+
+      return stringsObject;
     }, {});
 
-    obj[locale.code] = {
+    translationsObject[locale.code] = {
       code: locale.validate,
       messages
     };
 
-    return obj;
+    return translationsObject;
   }, {});
-
-  console.log(localizedStringsObject)
 
   // Define the custom rule for the required email at login (without native language localization)
   // We pass the locale from the callBackUrl passed as fake target
