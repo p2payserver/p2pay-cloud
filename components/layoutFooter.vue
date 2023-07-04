@@ -9,6 +9,12 @@
     <div class="container">
       <nav class="section level">
         <div class="level-left">
+          <OButton
+            to="/admin"
+            tag="router-link"
+            variant="primary"
+            inverted
+          >Admin</OButton>
         </div>
         <div class="level-right">
           <div class="level-item">
