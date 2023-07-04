@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     marangaduHost: process.env.MARANGADU_HOST,
     marangaduPort: process.env.MARANGADU_PORT,
     marangaduFrom: process.env.MARANGADU_FROM,
+    platformAdmins: process.env.PLATFORM_ADMINS.split(','),
     public: {
       isDeployed,
       deploymentDomain
