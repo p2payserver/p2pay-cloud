@@ -14,14 +14,19 @@ export default defineNuxtPlugin(nuxtApp => {
   });
 
   // build the localization object
-  // Load all the properties in the customRules object except the ones starting with _
-  const localizeMessages = locales.reduce((obj, locale) => {
+  // Load all the properties in the customRules object
+  const localizedStringsObject = locales.reduce((obj, locale) => {
 
     const customRulesJson = modules[`../lang/${locale.code}.js`].customRules;
     const customRulesProps = Object.keys(customRulesJson);
 
     const messages = customRulesProps.reduce((obj, prop) => {
-      if (!prop.startsWith('_')) obj[prop] = customRulesJson[prop].source;
+      obj[prop] = customRulesJson[prop]({
+        normalize: (arr) => arr.map((_e, i) => arr[i]).join(),
+        interpolate: (str) => `{${str}}`,
+        named: (str) => str
+      });
+
       return obj;
     }, {});
 
@@ -33,10 +38,12 @@ export default defineNuxtPlugin(nuxtApp => {
     return obj;
   }, {});
 
+  console.log(localizedStringsObject)
+
   // Define the custom rule for the required email at login (without native language localization)
   // We pass the locale from the callBackUrl passed as fake target
   defineRule('loginEmailRequired', (value, [target]) => {
-    if (!value) return localizeMessages[target].messages.loginEmailRequired;
+    if (!value) return localizedStringsObject[target].messages.loginEmailRequired;
     return true;
   });
 
@@ -44,14 +51,14 @@ export default defineNuxtPlugin(nuxtApp => {
   // We pass the locale from the callBackUrl passed as fake target
   defineRule('loginEmailValid', (value, [target]) => {
     const regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (!regex.test(value)) return localizeMessages[target].messages.loginEmailValid.replace('{value}', value);
+    if (!regex.test(value)) return localizedStringsObject[target].messages.loginEmailValid.replace('{value}', value);
     return true;
   })
 
   
   // configure localized messages
   configure({
-    generateMessage: localize(localizeMessages),
+    generateMessage: localize(localizedStringsObject),
   })
 });
 
