@@ -3,8 +3,16 @@ import dashboard from '~/assets/json/dashboard.json';
 
 const { signOut } = useAuth();
 
+const {
+  locale: {
+    value: locale
+  }
+} = useI18n();
+
 const logOut = async () => {
-  await signOut();
+  await signOut({
+    callbackUrl: `/${locale}`
+  });
 };
 </script>
 
