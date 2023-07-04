@@ -20,9 +20,9 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
   if (status.value === 'authenticated') {
 
-    const { error } = await useIsFieldTouched('/api/admin/user');
+    const { error, pending} = await useIsFieldTouched('/api/admin/user');
 
-    if (error) return abortNavigation(notAdmin());
+    if (error || !pending) return abortNavigation(notAdmin());
 
     return
   }
