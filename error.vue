@@ -44,13 +44,12 @@ const handleError = () => clearError({ redirect: `/${locale}` });
     <div class="hero-body">
       <div class="container has-text-centered">
         <p class="title">{{ translatedErrorMessage }}</p>
-        <!-- DevOnly -->
-        <div> 
+        <DevOnly> 
           <div class="block content">
             <div>{{ error.statusMessage || error.message }}</div>
             <div>{{ error.stack }}</div>
           </div>
-        </div>
+        </DevOnly>
         <button @click="handleError" class="button is-primary is-outlined">{{ $t('error.backToTheHomePage') }}</button>
       </div>
     </div>
