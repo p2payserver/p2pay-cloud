@@ -1,0 +1,7 @@
+{
+  "Settings": {
+    "Foo": "/admin/settings/foo",
+    "Bar": "/admin/settings/bar"
+  }
+
+}

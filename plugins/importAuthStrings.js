@@ -1,7 +1,8 @@
 import { locales } from '~/assets/js/locales';
 
-
-
+// build the localization object
+// Load all the properties in the auth object
+// that is retrived with the $importAuthStrings plugin function
 export default defineNuxtPlugin(async nuxtApp => {
 
   const files = import.meta.glob('../lang/*.js',  {
@@ -9,8 +10,6 @@ export default defineNuxtPlugin(async nuxtApp => {
     eager: true
   });
 
-  // build the localization object
-  // Load all the properties in the auth object
   const localizedStringsObject = locales.reduce((translationsObject, locale) => {
 
     const authJson = files[`../lang/${locale.code}.js`].auth;

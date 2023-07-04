@@ -42,9 +42,6 @@ export default {
     emailSubject: 'Iniciar sesión en {host}',
     emailContent: 'Inicie sesión en su cuenta en {host} haciendo clic en el enlace:\n\n{url}\n\nSi no ha solicitado este correo electrónico, puede ignorarlo de forma segura.'
   },
-  // Custom rules which name starts with an underscore
-  // are not automatically imported in vee validate generateMessage
-  // but returned directly within the custom rule function
   customRules: {
     loginEmailRequired: 'El correo es requerido',
     loginEmailValid: '{value} no es un correo electronico valido'

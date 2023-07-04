@@ -2,12 +2,12 @@ import { defineRule, configure } from "vee-validate";
 import { localize } from '@vee-validate/i18n';
 import { locales } from '../assets/js/locales';
 
+// Import the localized messages for all the custom rules and configure them
+// Make sure that the rule name is the same as the localization key imported
+// Once the naming rule is respected, this code doesn't need to be changed if new rules are added
+// https://vitejs.dev/guide/features.html#glob-import
 export default defineNuxtPlugin(nuxtApp => {
 
-  // Import the localized messages for all the custom rules and configure them
-  // Make sure that the rule name is the same as the localization key imported
-  // Once the naming rule is respected, this code doesn't need to be changed if new rules are added
-  // https://vitejs.dev/guide/features.html#glob-import
   const files = import.meta.glob('../lang/*.js',  {
     import: 'default',
     eager: true

@@ -42,9 +42,6 @@ export default {
     emailSubject: 'Sign in to {host}',
     emailContent: 'Sign in to your account at {host} by clicking the link:\n\n{url}\n\nIf you have not requested this email you can safely ignore it.'
   },
-  // Custom rules which name starts with an underscore
-  // are not automatically imported in vee validate generateMessage
-  // but returned directly within the custom rule function
   customRules: {
     loginEmailRequired: 'The email is required',
     loginEmailValid: '{value} is not a valid email address'
