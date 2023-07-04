@@ -8,7 +8,7 @@ export default defineNuxtPlugin(nuxtApp => {
   // Make sure that the rule name is the same as the localization key imported
   // Once the naming rule is respected, this code doesn't need to be changed if new rules are added
   // https://vitejs.dev/guide/features.html#glob-import
-  const modules = import.meta.glob('../lang/*.js',  {
+  const files = import.meta.glob('../lang/*.js',  {
     import: 'default',
     eager: true
   });
@@ -17,20 +17,17 @@ export default defineNuxtPlugin(nuxtApp => {
   // Load all the properties in the customRules object
   const localizedStringsObject = locales.reduce((translationsObject, locale) => {
 
-    const customRulesJson = modules[`../lang/${locale.code}.js`].customRules;
+    const customRulesJson = files[`../lang/${locale.code}.js`].customRules;
     const customRulesProps = Object.keys(customRulesJson);
 
     const messages = customRulesProps.reduce((stringsObject, prop) => {
       stringsObject[prop] = customRulesJson[prop]({
-        normalize: (arr) => arr.map((_e, i) => {arr[i]}).join(''),
+        normalize: (arr) => arr.map((_e, i) => arr[i]).join(''),
         interpolate: (str) => `{${str}}`,
         named: (str) => str
       });
-
-      console.log(obj[prop])
-
       return stringsObject;
-    }, {});
+    }, {})
 
     translationsObject[locale.code] = {
       code: locale.validate,

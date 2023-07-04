@@ -64,5 +64,5 @@ export default defineNuxtConfig({
     },
   },
 
-  debug: (isDeployed) ? true : false
+  debug: (isDeployed) ? false : true
 });
