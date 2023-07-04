@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     if (!session) {
       throw createError({
         statusMessage: 'Unauthenticated',
-        statusCode: 403
+        statusCode: 401
       });
     };
 
@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
     if (!platformAdmins.includes(user)) {
       throw createError({
         statusMessage: 'Unauthorized',
-        statusCode: 401
+        statusCode: 403
       });
     };
 

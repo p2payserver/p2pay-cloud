@@ -27,7 +27,7 @@ switch(props.error.statusCode) {
     translatedErrorMessage = t('error.unauthorized')
     break;
   case 403:
-    translatedErrorMessage = t('error.unauthorized')
+    translatedErrorMessage = t('error.unauthenticated')
     break;
   case 404:
     translatedErrorMessage = t('error.pageNotFound')

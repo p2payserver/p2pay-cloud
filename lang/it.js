@@ -30,6 +30,7 @@ export default {
   error: {
     pageNotFound: 'Pagina non trovata',
     unauthorized: 'Non autorizzato',
+    unauthenticated: 'Non autenticato',
     somethingWentWrong: 'Qualcosa è andato storto',
     backToTheHomePage: 'Tornare alla pagina principale',
   },

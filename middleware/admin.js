@@ -2,7 +2,7 @@ const notUser = () => {
 
   const error = new Error();
   error.code = 401;
-  error.message = 'Unauthorized'
+  error.message = 'Unauthenticated'
   return error;
 }
 
@@ -10,7 +10,7 @@ const notAdmin = () => {
 
   const error = new Error();
   error.code = 403;
-  error.message = 'Unauthenticated'
+  error.message = 'Unauthorized'
   return error;
 }
 
