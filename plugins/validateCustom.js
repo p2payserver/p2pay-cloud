@@ -21,11 +21,13 @@ export default defineNuxtPlugin(nuxtApp => {
     const customRulesProps = Object.keys(customRulesJson);
 
     const messages = customRulesProps.reduce((stringsObject, prop) => {
+
       stringsObject[prop] = customRulesJson[prop]({
-        normalize: (arr) => arr.map((_e, i) => arr[i]).join(''),
-        interpolate: (str) => `{${str}}`,
-        named: (str) => str
+        normalize: arr => arr.map((_e, i) => arr[i]).join(''),
+        interpolate: str => `{${str}}`,
+        named: str => str
       });
+
       return stringsObject;
     }, {})
 
