@@ -1,10 +1,7 @@
 {
-  "Settings": {
-    "Foo": "/admin/settings/foo",
-    "Bar": "/admin/settings/bar"
-  },
-  "Users": {
-    "Active": "/admin/users/active",
-    "Inactive": "/admin/users/inactive"
+  "Settings": "/admin/settings",
+  "Accounts": {
+    "Active": "/admin/accounts/active",
+    "Inactive": "/admin/accounts/inactive"
   }
 }

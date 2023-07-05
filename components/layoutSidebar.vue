@@ -20,16 +20,28 @@ const logOut = async () => {
   <section class="section">
     <OMenu>
       <OMenuList :label="$t('menu.dashboard')">
-        <OMenuItem v-for="main in Object.keys(dashboard)" :key="main" expanded>
-          <template  #label="props">{{ $t(main) }}</template>
+        <div v-for="main in Object.keys(dashboard)" :key="main">
+          <OMenuItem expanded>
+            <template
+              v-if="typeof dashboard[main] === 'object'"
+              #label="props"
+            >{{ $t(main) }}</template>
+            <OMenuItem
+              v-if="typeof dashboard[main] === 'object'"
+              v-for="item in Object.keys(dashboard[main])"
+              :key="item"
+              :label="$t(item)"
+              tag="router-link"
+              :to="dashboard[main][item]"
+            />
+          </OMenuItem>
           <OMenuItem
-            v-for="item in  Object.keys(dashboard[main])"
-            :key="item"
-            :label="$t(item)"
+            v-if="typeof dashboard[main] === 'string'"
+            :label="$t(main)"
             tag="router-link"
-            :to="localePath(dashboard[main][item])"
+            :to="dashboard[main]"
           />
-        </OMenuItem>
+        </div>
       </OMenuList>
     </OMenu>
     <OMenu>
