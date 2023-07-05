@@ -1,5 +1,5 @@
 
-const isDeployed = (process.env.AUTH_ORIGIN) ? true : false;
+const isDeployed = (process.env.AUTH_ORIGIN === 'http://localhost:3000' || !process.env.AUTH_ORIGIN) ? false : true;
 const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 
 import {
@@ -48,21 +48,17 @@ export default defineNuxtConfig({
   },
 
   auth: {
-    // https://sidebase.io/nuxt-auth/v0.6/configuration/nuxt-auth-handler#nuxtauthhandler
-    origin: `${deploymentDomain}`,
-    // https://sidebase.io/nuxt-auth/v0.6/configuration/nuxt-config#module-nuxtconfigts
-    baseUrl: `${deploymentDomain}/api/auth`,
-    addDefaultCallbackUrl: true,
     provider: {
       type: 'authjs',
       addDefaultCallbackUrl: true
     },
+    origin: deploymentDomain,
+    baseUrl: `/api/auth`,
+    addDefaultCallbackUrl: true,
     globalAppMiddleware: {
       isEnabled: true,
       allow404WithoutAuth: true,
       addDefaultCallbackUrl: true
     },
-  },
-
-  debug: (isDeployed) ? false : true
+  }
 });

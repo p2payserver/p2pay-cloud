@@ -13,6 +13,7 @@ const locale = (
   : defaultLocale;
   
 definePageMeta({
+  i18n: false,
   layout: "auth",
   auth: {
     unauthenticatedOnly: true,
@@ -20,9 +21,7 @@ definePageMeta({
   }
 });
 
-const { signIn , getProviders } = useAuth();
-
-// const providers = await getProviders();
+const { signIn } = useAuth();
 
 const form = ref({
   loginEmail: '',
@@ -42,25 +41,21 @@ const {
 } = useRuntimeConfig();
 
 const signInHandler = async () => {
-
   try {
-    
-    const { error, url } = await signIn(undefined, {
-    email: form.value.loginEmail,
-    callbackUrl: `${deploymentDomain}/${locale}/dashboard`
-  });
+    const { error, url }= await signIn('magic-link', {
+      email: form.value.loginEmail,
+      callbackUrl: `/${locale}/dashboard`,
+    });
 
-  if (error) {
-
-    alert(error);
-
-  } else {
-
-    alert(url);
-    return navigateTo(`/${locale}/verify`)
-  }
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('url', url)
+      return navigateTo(`/${locale}/verify`)
+    }
   } catch (error) {
-    alert(error)
+
+    console.log(error);
   }
 };
 
@@ -105,12 +100,10 @@ const { loginEmail, magicLink, magicLinkInstructions } = $importAuthStrings(loca
           expanded
         >{{ magicLink }}</OButton>
       </OField>
-      </VForm>
-      <section class="section">
-        <div class="has-new-line">{{  magicLinkInstructions }}</div>
-      </section>
-
-    <!-- <pre>{{ providers }}</pre> -->
+    </VForm>
+    <section class="section">
+      <div class="has-new-line">{{  magicLinkInstructions }}</div>
+    </section>
   </div>
   </NuxtLayout>
 </template>

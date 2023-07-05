@@ -1,7 +1,6 @@
 <script setup>
 definePageMeta({
-  layout: "dashboard",
-  auth: false
+  layout: "dashboard"
 });
 </script>
 

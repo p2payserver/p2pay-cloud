@@ -5,6 +5,15 @@ import { customFaunadbAdapter } from '~/assets/js/customFaunadbAdapter';
 import nodemailer from 'nodemailer';
 import { locales, defaultLocale } from '~/assets/js/locales';
 import find from 'lodash.find';
+import en from '~/lang/en'
+import es from '~/lang/es'
+import it from '~/lang/it'
+
+const authMessages = {
+  en: en.auth,
+  es: es.auth,
+  it: it.auth
+};
 
 const {
   isDeployed,
@@ -25,7 +34,7 @@ const client = new faunadb.Client({
 });
 
 export default NuxtAuthHandler({
-  debug: (isDeployed) ? true : false,
+  debug: (isDeployed) ? false : true,
   pages: {
     signIn: `/auth/login`,
     verifyRequest: `/auth/verify`,
@@ -54,8 +63,8 @@ export default NuxtAuthHandler({
         const searchParams = new URLSearchParams(url.split('?')[1]);
         const callbackUrl = searchParams.get("callbackUrl");
         const locale = (callbackUrl && find(locales, { code: callbackUrl.split('/')[3] })) ? callbackUrl.split('/')[3] : defaultLocale;
-        const { $importAuthStrings } = useNuxtApp();
-        const { emailSubject, emailContent } = $importAuthStrings(locale);
+
+        const { emailSubject, emailContent } = authMessages[locale];
         const { host } = new URL(url)
         const transport = nodemailer.createTransport(server)
         await transport.sendMail({
