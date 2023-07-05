@@ -19,16 +19,16 @@ const logOut = async () => {
 <template>
   <section class="section">
     <OMenu>
-      <OMenuList :label="Admin">
-        <OMenuItem v-for="main in Object.keys(dashboard)" :key="main" expanded>
+      <OMenuList label="Admin">
+        <OMenuItem v-for="main in Object.keys(admin)" :key="main" expanded>
           <template  #label="props">{{ main }}</template>
-          <OMenuItem
-            v-for="item in Object.keys(admin[main])"
-            :key="item"
-            :label="item"
-            tag="router-link"
-            :to="admin[main][item]"
-          />
+            <OMenuItem
+              v-for="item in Object.keys(admin[main])"
+              :key="item"
+              :label="item"
+              tag="router-link"
+              :to="admin[main][item]"
+            />
         </OMenuItem>
       </OMenuList>
     </OMenu>
