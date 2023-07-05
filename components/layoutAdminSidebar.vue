@@ -3,15 +3,9 @@ import admin from '~/assets/json/admin.json';
 
 const { signOut } = useAuth();
 
-const {
-  locale: {
-    value: locale
-  }
-} = useI18n();
-
 const logOut = async () => {
   await signOut({
-    callbackUrl: `/${locale}`
+    callbackUrl: `/`
   });
 };
 </script>
@@ -20,7 +14,10 @@ const logOut = async () => {
   <section class="section">
     <OMenu>
       <OMenuList label="Admin">
-        <div v-for="main in Object.keys(admin)" :key="main">
+        <div
+          v-for="main in Object.keys(admin)"
+          :key="main"
+        >
           <OMenuItem expanded>
             <template
               v-if="typeof admin[main] === 'object'"

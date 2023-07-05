@@ -20,7 +20,10 @@ const logOut = async () => {
   <section class="section">
     <OMenu>
       <OMenuList :label="$t('menu.dashboard')">
-        <div v-for="main in Object.keys(dashboard)" :key="main">
+        <div 
+          v-for="main in Object.keys(dashboard)" 
+          :key="main"
+        >
           <OMenuItem expanded>
             <template
               v-if="typeof dashboard[main] === 'object'"
