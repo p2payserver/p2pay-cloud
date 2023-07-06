@@ -35,14 +35,14 @@ const logOut = async () => {
               :key="item"
               :label="$t(item)"
               tag="router-link"
-              :to="dashboard[main][item]"
+              :to="localePath(dashboard[main][item])"
             />
           </OMenuItem>
           <OMenuItem
             v-if="typeof dashboard[main] === 'string'"
             :label="$t(main)"
             tag="router-link"
-            :to="dashboard[main]"
+            :to="localePath(dashboard[main])"
           />
         </div>
       </OMenuList>

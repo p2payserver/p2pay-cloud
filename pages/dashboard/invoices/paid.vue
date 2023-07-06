@@ -2,10 +2,12 @@
 definePageMeta({
   layout: "dashboard"
 });
+const { fullPath } = useRoute();
+const pagePath = fullPath.split('/').slice(3).join('/>/').split('/');
 </script>
 
 <template>
   <NuxtLayout>
-    <div class="title">{{ $t('dashboard.invoice.paid')}}</div>
+    <DashboardHeader :pagePath="pagePath" />
   </NuxtLayout>
 </template>

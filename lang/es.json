@@ -10,25 +10,9 @@
     "booking": "Reservas",
     "shop": "Tienda",
     "settings": "Configuración",
+    "balance": "Saldo",
     "pending": "Pendientes",
     "paid": "Pagadas"
-  },
-  "dashboard": {
-    "invoice": {
-      "settings": "Configuración de facturación",
-      "pending": "Facturas pendientes",
-      "paid": "Facturas pagadas"
-    },
-    "booking": {
-      "settings": "Configuración de reservas",
-      "pending": "Reservas pendientes",
-      "paid": "Reservas pagadas"
-    },
-    "shop": {
-      "settings": "Configuración de tienda",
-      "pending": "Copras pendientes",
-      "paid": "Compras pagadas"
-    }
   },
   "error": {
     "pageNotFound": "Esta página no se pudo encontrar",

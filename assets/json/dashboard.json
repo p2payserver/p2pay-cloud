@@ -2,16 +2,19 @@
 {
   "menu.invoices": {
     "menu.settings": "/dashboard/invoices/settings",
+    "menu.balance": "/dashboard/invoices/balance",
     "menu.pending": "/dashboard/invoices/pending",
     "menu.paid": "/dashboard/invoices/paid"
   },
   "menu.booking": {
     "menu.settings": "/dashboard/booking/settings",
+    "menu.balance": "/dashboard/booking/balance",
     "menu.pending": "/dashboard/booking/pending",
     "menu.paid": "/dashboard/booking/paid"
   },
   "menu.shop": {
     "menu.settings": "/dashboard/shop/settings",
+    "menu.balance": "/dashboard/shop/balance",
     "menu.pending": "/dashboard/shop/pending",
     "menu.paid": "/dashboard/shop/paid"
   }
