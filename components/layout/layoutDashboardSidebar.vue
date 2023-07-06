@@ -19,8 +19,7 @@ const logOut = async () => {
 <template>
   <section class="section">
     <OMenu>
-      <OMenuList :label="data.user.email" />
-      <OMenuList :label="$t('menu.dashboard')">
+      <OMenuList :label="data.user.email">
         <div 
           v-for="main in Object.keys(dashboard)" 
           :key="main"

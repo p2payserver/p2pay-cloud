@@ -27,7 +27,17 @@ onMounted(() => {
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <div class="title">{{ $t('menu.dashboard') }}</div>
+    <div class="navbar-item">
+      <OButton
+        class="disabled"
+        variant="primary"
+        outlined
+      >
+        <span class="has-text-weight-bold">AnyBtcPay</span>
+        <span>&nbsp;</span>
+        <span>{{ $t('menu.dashboard') }}</span>
+      </OButton>
+    </div>
     <a role="button" class="navbar-burger" data-target="dashboardNavbar">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -35,7 +45,7 @@ onMounted(() => {
     </a>
   </div>
   <div id="dashboardNavbar" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-start is-hidden-tablet">
       <div v-for="main in Object.keys(dashboard)" :key="main" class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">{{ $t(main) }}</a>
         <div v-for="item in  Object.keys(dashboard[main])" key="item" class="navbar-dropdown">
@@ -45,6 +55,12 @@ onMounted(() => {
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
+        <OButton
+          :to="localePath('/')"
+          tag="router-link"
+          variant="primary"
+          inverted
+        >{{ $t('homePage') }}</OButton>
         <OButton @click="logOut">{{ $t('logout') }}</OButton>
       </div>
     </div>

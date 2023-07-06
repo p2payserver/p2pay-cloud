@@ -1,7 +1,5 @@
 <script setup>
   const { locale, locales } = useI18n();
-  const { meta: { layout }} = useRoute();
-  const isPublic = (layout !== 'admin' && layout !== 'dashboard');
   const switchLocalePath = useSwitchLocalePath();
   const availableLocales = computed(() => (locales.value).filter(i => i.code !== locale.value));
 </script>
@@ -12,19 +10,11 @@
       <div class="level-left">
         <div class="level-item">
           <OButton
-            v-if="isPublic"
             :to="localePath('/admin')"
             tag="router-link"
             variant="primary"
             inverted
           >{{ $t('admin') }}</OButton>
-          <OButton
-            v-else
-            :to="localePath('/')"
-            tag="router-link"
-            variant="primary"
-            inverted
-          >{{ $t('homePage') }}</OButton>
         </div>
       </div>
       <div class="level-right">

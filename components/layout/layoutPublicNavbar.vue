@@ -3,13 +3,18 @@ const { status } = useAuth();
 </script>
 
 <template>
-<nav class="level">
+<nav class="level is-mobile">
   <div class="level-left">
     <div class="level-item">
-      <div class="tags has-addons">
-        <span class="tag is-primary is-medium">Any Btcpay</span>
-        <span class="tag is-light is-medium">0.3</span>
-      </div>
+      <OButton
+        class="disabled"
+        variant="primary"
+        outlined
+      >
+        <span class="has-text-weight-bold">AnyBtcPay</span>
+        <span>&nbsp;</span>
+        <span>v0.3</span>
+      </OButton>
     </div>
   </div>
   <div class="level-right">
@@ -28,7 +33,10 @@ const { status } = useAuth();
   /* Same vertical padding as navbar
   https://bulma.io/documentation/components/navbar/#variables */
 .level {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.disabled{
+  pointer-events: none;
 }
 </style>

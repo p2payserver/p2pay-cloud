@@ -28,17 +28,12 @@ const head = useLocaleHead({
         </template>
       </Head>
       <Body>
-        <div class="full-body">
+        <div class="full-body container">
           <main class="main-content">
-            <div class="is-hidden-tablet">
-              <layoutDashboardNavbar />
-              <slot />
-            </div>
-            <div class="columns is-hidden-mobile">
-              <nav class="column is-narrow">
-                <section class="section is-medium">
-                  <layoutDashboardSidebar />
-                </section>
+            <layoutDashboardNavbar />
+            <div class="columns">
+              <nav class="column is-narrow is-hidden-mobile">
+                <layoutDashboardSidebar />
               </nav>
               <div class="column">
                 <section class="section">

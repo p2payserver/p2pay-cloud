@@ -41,6 +41,12 @@ const head = useLocaleHead({
 </script>
 
 <style scoped>
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 .full-body {
   display: flex;
   min-height: 100vh;
