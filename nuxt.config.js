@@ -4,7 +4,6 @@ const isDeployed = (
 ) ? false : true;
 const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 
-console.log('isDeployed', isDeployed)
 import {
   locales,
   defaultLocale,
@@ -44,9 +43,7 @@ export default defineNuxtConfig({
     langDir: 'lang',
     strategy: 'prefix',
     detectBrowserLanguage: {
-      useCookie: false,
-      redirectOnRoot: true,
-      alwaysRedirect: true,
+      useCookie: false
     }
   },
 

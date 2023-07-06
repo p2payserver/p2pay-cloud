@@ -13,11 +13,18 @@ definePageMeta({
   auth: false
 });
 
-const { t } = useI18n();
+const {
+  locale: {
+    value: locale
+  }
+} = useI18n();
+
+const { fullPath } = useRoute();
+if (fullPath === '/') navigateTo(`/${locale}`);
 </script>
 
 <template>
   <NuxtLayout>
-    <div>{{ t('welcome') }}</div>
+    <div>{{ $t('welcome') }}</div>
   </NuxtLayout>
 </template>
