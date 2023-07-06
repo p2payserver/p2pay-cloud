@@ -45,8 +45,7 @@ const signInHandler = async () => {
       callbackUrl: `/${locale}/dashboard`,
     });
   } catch (error) {
-
-    console.log(error);
+    throw createError(error);
   }
 };
 
