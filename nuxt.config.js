@@ -65,11 +65,19 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    storage: {
+    devStorage: {
       db: {
         driver: 'fs',
         base: './foo'
       }
-    }
+    },
+    storage: {
+      db: {
+        driver: 'github',
+        repo: process.env.GITHUB_REPO,
+        branch: 'main',
+        dir: '/foo',
+      }
+    },
   }
 });
