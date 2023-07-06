@@ -1,4 +1,9 @@
 export default {
+  welcome: 'Bienvenido',
+  login: 'Iniciar sesión',
+  logout: 'Salir',
+  homePage: 'Página principal',
+  admin: 'Admón',
   menu: {
     dashboard: 'Panel de control',
     invoices: 'Facturación',
@@ -25,8 +30,6 @@ export default {
       paid: 'Compras pagadas'
     }
   },
-  welcome: 'Bienvenido',
-  logout: 'Salir',
   error: {
     pageNotFound: 'Esta página no se pudo encontrar',
     unauthorized: 'No autorizado',

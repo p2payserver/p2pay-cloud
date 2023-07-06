@@ -31,13 +31,13 @@ const head = useLocaleHead({
         <div class="full-body">
           <main class="main-content">
             <div class="is-hidden-tablet">
-              <layoutNavbar />
+              <layoutDashboardNavbar />
               <slot />
             </div>
             <div class="columns is-hidden-mobile">
               <nav class="column is-narrow">
                 <section class="section is-medium">
-                  <layoutSidebar />
+                  <layoutDashboardSidebar />
                 </section>
               </nav>
               <div class="column">

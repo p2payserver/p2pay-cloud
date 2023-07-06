@@ -5,15 +5,6 @@ import { customFaunadbAdapter } from '~/assets/js/customFaunadbAdapter';
 import nodemailer from 'nodemailer';
 import { locales, defaultLocale } from '~/assets/js/locales';
 import find from 'lodash.find';
-import en from '~/lang/en'
-import es from '~/lang/es'
-import it from '~/lang/it'
-
-const authMessages = {
-  en: en.auth,
-  es: es.auth,
-  it: it.auth
-};
 
 const {
   isDeployed,
@@ -32,6 +23,10 @@ const client = new faunadb.Client({
   domain: "db.fauna.com",
   port: 443,
 });
+
+const emailProviders = locales.map(locale => {
+  return 
+})
 
 export default NuxtAuthHandler({
   debug: (isDeployed) ? false : true,
@@ -63,17 +58,24 @@ export default NuxtAuthHandler({
         const searchParams = new URLSearchParams(url.split('?')[1]);
         const callbackUrl = searchParams.get("callbackUrl");
         const locale = (callbackUrl && find(locales, { code: callbackUrl.split('/')[3] })) ? callbackUrl.split('/')[3] : defaultLocale;
+        
+        const {
+          auth: {
+            emailSubject,
+            emailContent
+          }
+        } = await useStorage('db').getItem(`${locale}.json`);
 
-        const { emailSubject, emailContent } = authMessages[locale];
-        const { host } = new URL(url)
-        const transport = nodemailer.createTransport(server)
+        const { host } = new URL(url);
+
+        const transport = nodemailer.createTransport(server);
         await transport.sendMail({
           to: email,
           from,
           subject: emailSubject.replace('{host}', host),
           text: emailContent.replace('{host}', host).replace('{url}', url)
           // html:
-        })
+        });
       },
     })
   ],

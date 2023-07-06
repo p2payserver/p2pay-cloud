@@ -1,7 +1,7 @@
 <script setup>
 import dashboard from '~/assets/json/dashboard.json';
 
-const { signOut } = useAuth();
+const { signOut, data } = useAuth();
 
 const {
   locale: {
@@ -19,6 +19,7 @@ const logOut = async () => {
 <template>
   <section class="section">
     <OMenu>
+      <OMenuList :label="data.user.email" />
       <OMenuList :label="$t('menu.dashboard')">
         <div 
           v-for="main in Object.keys(dashboard)" 
@@ -48,7 +49,11 @@ const logOut = async () => {
       </OMenuList>
     </OMenu>
     <OMenu>
-      <OButton @click="logOut">{{ $t('logout') }}</OButton>
+      <OButton
+        @click="logOut"
+        variant="success"
+        inverted
+      >{{ $t('logout') }}</OButton>
     </OMenu>
   </section>
 </template>

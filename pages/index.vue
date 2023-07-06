@@ -1,10 +1,10 @@
 <script setup>
 useHead({
-  title: 'Any Pay',
+  title: 'Any Btcpay',
   meta: [
     {
       name: 'description',
-      content: ``
+      content: `From shitcoins to Btcpay`
     },
   ],
 });
@@ -19,6 +19,5 @@ const { t } = useI18n();
 <template>
   <NuxtLayout>
     <div>{{ t('welcome') }}</div>
-    <NuxtLink :to="localePath('/dashboard')">Go to dashboard</NuxtLink>
   </NuxtLayout>
 </template>

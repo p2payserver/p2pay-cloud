@@ -29,20 +29,24 @@ const logOut = async () => {
               :key="item"
               :label="item"
               tag="router-link"
-              :to="admin[main][item]"
+              :to="localePath(admin[main][item])"
             />
           </OMenuItem>
           <OMenuItem
             v-if="typeof admin[main] === 'string'"
             :label="main"
             tag="router-link"
-            :to="admin[main]"
+            :to="localePath(admin[main])"
           />
         </div>
       </OMenuList>
     </OMenu>
     <OMenu>
-      <OButton @click="logOut">{{ $t('logout') }}</OButton>
+      <OButton
+        @click="logOut"
+        variant="success"
+        inverted
+      >Sign out</OButton>
     </OMenu>
   </section>
 </template>

@@ -1,31 +1,21 @@
-const notUser = () => {
-
-  const error = new Error();
-  error.code = 401;
-  error.message = 'Unauthenticated'
-  return error;
-}
-
-const notAdmin = () => {
-
-  const error = new Error();
-  error.code = 403;
-  error.message = 'Unauthorized'
-  return error;
-}
-
 export default defineNuxtRouteMiddleware(async (to, from) => {
 
   const { status } = useAuth();
 
   if (status.value === 'authenticated') {
 
-    const { error, pending} = await useIsFieldTouched('/api/admin/user');
+    const { error } = await useFetch('/api/admin/user');
 
-    if (error || !pending) return abortNavigation(notAdmin());
+    if (error.value) {
+      throw createError({
+        statusCode: 403,
+        statusMessage: 'Unauthorized'
+      });
+    };
 
-    return
+    return;
   }
 
-  return abortNavigation(notUser())
+  // We don't handle the 401 Unauthenticated case
+  // because it get redirected to the login page
 })

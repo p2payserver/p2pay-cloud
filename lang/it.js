@@ -1,4 +1,9 @@
 export default {
+  welcome: 'Benvenuto',
+  login: 'Accedi',
+  logout: 'Esci',
+  homePage: 'Pagina principale',
+  admin: 'Amministratore',
   menu: {
     dashboard: 'Pannello di controllo',
     invoices: 'Fatture',
@@ -25,8 +30,6 @@ export default {
       paid: 'Acquisti pagati'
     }
   },
-  welcome: 'Benvenuto',
-  logout: 'Esci',
   error: {
     pageNotFound: 'Pagina non trovata',
     unauthorized: 'Non autorizzato',

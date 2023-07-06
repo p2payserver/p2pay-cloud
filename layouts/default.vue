@@ -10,11 +10,10 @@
         </template>
       </Head>
       <Body>
-        <div class="full-body">
+        <div class="full-body container">
           <main class="main-content">
-            <div class="container">
+              <LayoutPublicNavbar />
               <slot />
-            </div>
           </main>
           <LayoutFooter />
         </div>

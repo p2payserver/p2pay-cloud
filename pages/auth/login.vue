@@ -2,6 +2,15 @@
 import find from 'lodash.find';
 import { locales, defaultLocale } from '~/assets/js/locales'
 
+definePageMeta({
+  i18n: false,
+  layout: "auth",
+  auth: {
+    unauthenticatedOnly: true,
+    navigateAuthenticatedTo: (locale) => `/${locale}/dashboard`
+  }
+});
+
 const { query } = useRoute();
 
 const locale = (
@@ -11,15 +20,6 @@ const locale = (
 )
   ? query.callbackUrl.split('/')[3]
   : defaultLocale;
-  
-definePageMeta({
-  i18n: false,
-  layout: "auth",
-  auth: {
-    unauthenticatedOnly: true,
-    navigateAuthenticatedTo: (locale) => `/${locale}/dashboard`
-  }
-});
 
 const { signIn } = useAuth();
 
@@ -32,27 +32,18 @@ const validationSchema = {
     loginEmailRequired: locale,
     loginEmailValid: locale
   }
-}
-
-const {
-  public: {
-    deploymentDomain
-  }
-} = useRuntimeConfig();
+};
 
 const signInHandler = async () => {
   try {
-    const { error, url }= await signIn('magic-link', {
+
+    const cookieLocale = useCookie('locale', { maxAge: 60 });
+    cookieLocale.value = locale;
+
+    await signIn('magic-link', {
       email: form.value.loginEmail,
       callbackUrl: `/${locale}/dashboard`,
     });
-
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('url', url)
-      return navigateTo(`/${locale}/verify`)
-    }
   } catch (error) {
 
     console.log(error);

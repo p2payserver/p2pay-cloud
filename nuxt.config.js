@@ -1,5 +1,7 @@
-
-const isDeployed = (process.env.AUTH_ORIGIN === 'http://localhost:3000' || !process.env.AUTH_ORIGIN) ? false : true;
+const isDeployed = (
+  process.env.AUTH_ORIGIN === 'http://localhost:3000'
+  || !process.env.AUTH_ORIGIN
+) ? false : true;
 const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 
 import {
@@ -60,5 +62,14 @@ export default defineNuxtConfig({
       allow404WithoutAuth: true,
       addDefaultCallbackUrl: true
     },
+  },
+
+  nitro: {
+    storage: {
+      db: {
+        driver: 'fs',
+        base: './foo'
+      }
+    }
   }
 });

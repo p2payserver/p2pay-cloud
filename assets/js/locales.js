@@ -26,3 +26,4 @@ export const locales = [
 ];
 
 export const defaultLocale = find(locales, { default: true }).code;
+

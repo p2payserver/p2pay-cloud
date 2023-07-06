@@ -1,4 +1,9 @@
 export default {
+  welcome: 'Welcome',
+  login: 'Log in',
+  logout: 'Sign out',
+  homePage: 'Home',
+  admin: 'Admin',
   menu: {
     dashboard: 'Dashboard',
     invoices: 'Invoices',
@@ -25,8 +30,6 @@ export default {
       paid: 'Paid purchases'
     }
   },
-  welcome: 'Welcome',
-  logout: 'Sign out',
   error: {
     pageNotFound: 'This page could not be found',
     unauthorized: 'Unauthorized',
