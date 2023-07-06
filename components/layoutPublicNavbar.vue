@@ -8,7 +8,7 @@ const { status } = useAuth();
     <div class="level-item">
       <div class="tags has-addons">
         <span class="tag is-primary is-medium">Any Btcpay</span>
-        <span class="tag is-light is-medium">0.1.0</span>
+        <span class="tag is-light is-medium">0.3</span>
       </div>
     </div>
   </div>
