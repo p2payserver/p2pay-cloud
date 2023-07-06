@@ -29,7 +29,7 @@ const emailProviders = locales.map(locale => {
 })
 
 export default NuxtAuthHandler({
-  debug: (isDeployed) ? false : true,
+  debug: (isDeployed) ? true : true,
   pages: {
     signIn: `/auth/login`,
     verifyRequest: `/auth/verify`,
