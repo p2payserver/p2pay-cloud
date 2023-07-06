@@ -66,6 +66,8 @@ export default NuxtAuthHandler({
           }
         } = await useStorage('db').getItem(`${locale}.json`);
 
+        console.log('emailSubject', emailSubject)
+
         const { host } = new URL(url);
 
         const transport = nodemailer.createTransport(server);
