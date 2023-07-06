@@ -6,8 +6,6 @@ definePageMeta({
 
 <template>
   <NuxtLayout>
-    <section class="section is-medium">
-      <div class="title">{{ $t('dashboard.invoice.pending')}}</div>
-    </section>
+    <div class="title">{{ $t('dashboard.invoice.pending')}}</div>
   </NuxtLayout>
 </template>
