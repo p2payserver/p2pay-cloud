@@ -5,24 +5,24 @@ import { locales } from '~/assets/js/locales';
 // that is retrived with the $importAuthStrings plugin function
 export default defineNuxtPlugin(async nuxtApp => {
 
-  const files = import.meta.glob('../lang/*.js',  {
+  const files = import.meta.glob('../lang/*.json',  {
     import: 'default',
     eager: true
   });
 
   const localizedStringsObject = locales.reduce((translationsObject, locale) => {
 
-    const authJson = files[`../lang/${locale.code}.js`].auth;
+    const authJson = files[`../lang/${locale.code}.json`].auth;
     const authProps = Object.keys(authJson);
 
     const messages = authProps.reduce((stringsObject, prop) => {
 
-      stringsObject[prop] = authJson[prop]({
+      stringsObject[prop] = authJson[prop]      ({
         normalize: arr => arr.map((_e, i) => arr[i]).join(''),
         interpolate: str => `{${str}}`,
         named: str => str
       });
-
+      
       return stringsObject;
     }, {})
 

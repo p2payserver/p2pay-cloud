@@ -24,12 +24,8 @@ const client = new faunadb.Client({
   port: 443,
 });
 
-const emailProviders = locales.map(locale => {
-  return 
-})
-
 export default NuxtAuthHandler({
-  debug: (isDeployed) ? true : true,
+  // debug: (isDeployed) ? false : true,
   pages: {
     signIn: `/auth/login`,
     verifyRequest: `/auth/verify`,
@@ -59,14 +55,13 @@ export default NuxtAuthHandler({
         const callbackUrl = searchParams.get("callbackUrl");
         const locale = (callbackUrl && find(locales, { code: callbackUrl.split('/')[3] })) ? callbackUrl.split('/')[3] : defaultLocale;
         
+        // this uses fs on dev and github in production
         const {
           auth: {
             emailSubject,
             emailContent
           }
         } = await useStorage('db').getItem(`${locale}.json`);
-
-        console.log('emailSubject', emailSubject)
 
         const { host } = new URL(url);
 

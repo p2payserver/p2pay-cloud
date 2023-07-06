@@ -8,7 +8,7 @@ import { locales } from '../assets/js/locales';
 // https://vitejs.dev/guide/features.html#glob-import
 export default defineNuxtPlugin(nuxtApp => {
 
-  const files = import.meta.glob('../lang/*.js',  {
+  const files = import.meta.glob('../lang/*.json',  {
     import: 'default',
     eager: true
   });
@@ -17,7 +17,7 @@ export default defineNuxtPlugin(nuxtApp => {
   // Load all the properties in the customRules object
   const localizedStringsObject = locales.reduce((translationsObject, locale) => {
 
-    const customRulesJson = files[`../lang/${locale.code}.js`].customRules;
+    const customRulesJson = files[`../lang/${locale.code}.json`].customRules;
     const customRulesProps = Object.keys(customRulesJson);
 
     const messages = customRulesProps.reduce((stringsObject, prop) => {

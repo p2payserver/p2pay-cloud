@@ -4,6 +4,7 @@ const isDeployed = (
 ) ? false : true;
 const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 
+console.log('isDeployed', isDeployed)
 import {
   locales,
   defaultLocale,
@@ -68,7 +69,7 @@ export default defineNuxtConfig({
     devStorage: {
       db: {
         driver: 'fs',
-        base: './foo'
+        base: './lang'
       }
     },
     storage: {
@@ -76,7 +77,7 @@ export default defineNuxtConfig({
         driver: 'github',
         repo: process.env.GITHUB_REPO,
         branch: 'main',
-        dir: '/foo',
+        dir: '/lang',
       }
     },
   }
