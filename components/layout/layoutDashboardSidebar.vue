@@ -47,12 +47,5 @@ const logOut = async () => {
         </div>
       </OMenuList>
     </OMenu>
-    <OMenu>
-      <OButton
-        @click="logOut"
-        variant="success"
-        inverted
-      >{{ $t('logout') }}</OButton>
-    </OMenu>
   </section>
 </template>
