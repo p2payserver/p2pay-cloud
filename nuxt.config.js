@@ -43,7 +43,12 @@ export default defineNuxtConfig({
     langDir: 'lang',
     strategy: 'prefix',
     detectBrowserLanguage: {
-      useCookie: false
+      useCookie: false,
+      // Those 2 settings are dummy
+      // but to work the redirect set in the index.vue page the are needed
+      // actual strategy is that it redirects only on home page
+      redirectOnRoot: true,
+      alwaysRedirect: true,
     }
   },
 
