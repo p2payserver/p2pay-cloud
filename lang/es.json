@@ -11,8 +11,7 @@
     "shop": "Tienda",
     "settings": "Configuración",
     "balance": "Saldo",
-    "pending": "Pendientes",
-    "paid": "Pagadas"
+    "payments": "Pagos"
   },
   "error": {
     "pageNotFound": "Esta página no se pudo encontrar",

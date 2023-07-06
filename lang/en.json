@@ -11,8 +11,7 @@
     "shop": "Shop",
     "settings": "Settings",
     "balance": "Balance",
-    "pending": "Pending",
-    "paid": "Paid"
+    "payments": "Payments"
   },
   "error": {
     "pageNotFound": "This page could not be found",

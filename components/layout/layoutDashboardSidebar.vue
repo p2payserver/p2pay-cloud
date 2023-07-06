@@ -1,19 +1,7 @@
 <script setup>
 import dashboard from '~/assets/json/dashboard.json';
 
-const { signOut, data } = useAuth();
-
-const {
-  locale: {
-    value: locale
-  }
-} = useI18n();
-
-const logOut = async () => {
-  await signOut({
-    callbackUrl: `/${locale}`
-  });
-};
+const { data } = useAuth();
 </script>
 
 <template>

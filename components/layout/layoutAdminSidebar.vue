@@ -3,9 +3,15 @@ import admin from '~/assets/json/admin.json';
 
 const { signOut } = useAuth();
 
+const {
+  locale: {
+    value: locale
+  }
+} = useI18n();
+
 const logOut = async () => {
   await signOut({
-    callbackUrl: `/`
+    callbackUrl: `/${locale}`
   });
 };
 </script>
