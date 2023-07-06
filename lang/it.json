@@ -40,14 +40,14 @@
   "auth": {
     "loginEmail": "Accesso",
     "magicLink": "Invia collegamento magico per email",
-    "magicLinkInstructions": "Non è richiesta alcuna password.\n\nTi invieremo un link magico per accedere via e-mail.\n\nSe utilizzi Slack, Notion o Wallet of Satoshi potresti avere familiarità con questo metodo di accesso.\n\nPer proteggere il tuo account, abilita 2FA sul tuo account e-mail.",
+    "magicLinkInstructions": "Non è richiesta alcuna password.\n\nTi invieremo un link magico per accedere via e-mail.\n\nSe utilizzi Slack, Notion o Wallet of Satoshi potresti avere familiarità con questo metodo di accesso.\n\nPer proteggere il tuo account, abilita 2FA sul tuo account email.",
     "emailSent": "Email inviata",
     "checkEmail": "Clicca il link inviato per email per accedere al tuo account",
     "emailSubject": "Accedi a {host}",
-    "emailContent": "Accedi al tuo account su {host} facendo clic sul link:\n\n{url}\n\nSe non hai richiesto questa e-mail puoi tranquillamente ignorarla."
+    "emailContent": "Accedi al tuo account su {host} facendo clic sul link:\n\n{url}\n\nSe non hai richiesto questa email puoi tranquillamente ignorarla."
   },
   "customRules": {
-    "loginEmailRequired": "L\"email è richiesta",
+    "loginEmailRequired": "L'email è richiesta",
     "loginEmailValid": "{value} non è un indirizzo email valido"
   }
 }
