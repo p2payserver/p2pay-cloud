@@ -1,10 +1,10 @@
 <script setup>
 useHead({
-  title: 'Any Btcpay',
+  title: 'AnyBtcPay',
   meta: [
     {
       name: 'description',
-      content: `From shitcoins to Btcpay`
+      content: `Accept shitcoins (crypto and fiat) on Btcpay Server`
     },
   ],
 });
