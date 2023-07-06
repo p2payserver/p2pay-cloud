@@ -10,10 +10,6 @@ import {
 } from './assets/js/locales';
 
 export default defineNuxtConfig({
-
-  css: [
-    '~/assets/scss/main.scss',
-  ],
   
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
@@ -29,6 +25,16 @@ export default defineNuxtConfig({
       deploymentDomain
     },
   },
+
+  css: [
+    '~/assets/scss/main.scss',
+  ],
+
+  components: [{
+    path: '~/components',
+    pathPrefix: false,
+    global: true
+  }],
 
   modules: [
     '@nuxtjs/i18n',
