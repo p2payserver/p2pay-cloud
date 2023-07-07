@@ -44,6 +44,11 @@ export default defineNuxtConfig({
           content: 'AnyBtcPay'
         },
         {
+          id: 'og:image',
+          name: 'og:image',
+          content: '/favicon/favicon.png'
+        },
+        {
           id: 'twitter:card',
           name: 'twitter:card',
           content: 'summary'
