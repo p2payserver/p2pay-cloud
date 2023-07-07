@@ -14,6 +14,15 @@ const head = useLocaleHead({
   identifierAttribute: 'id',
   addSeoAttributes: true
 });
+
+const {
+  locale: {
+    value: locale
+  }
+} = useI18n()
+
+const { fullPath } = useRoute();
+const pagePath = fullPath.split('/').slice(3).join('/>/').split('/');
 </script>
 
 <template>
@@ -37,6 +46,10 @@ const head = useLocaleHead({
               </nav>
               <div class="column">
                 <section class="section">
+                  <DashboardHeader
+                    v-if="fullPath !== '/' + locale + '/dashboard'"
+                    :pagePath="pagePath"
+                    />
                   <slot />
                 </section>
               </div>
