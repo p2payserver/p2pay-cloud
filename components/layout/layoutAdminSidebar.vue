@@ -63,3 +63,4 @@ const logOut = async () => {
   position: sticky;
   top: 0;
 }
+</style>
