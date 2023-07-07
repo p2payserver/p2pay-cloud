@@ -46,6 +46,7 @@ export default defineNuxtConfig({
         {
           id: 'og:image',
           name: 'og:image',
+          itemprop: 'image primaryImageOfPage',
           content: `${deploymentDomain}/favicon/favicon.png`
         },
         {
@@ -56,6 +57,7 @@ export default defineNuxtConfig({
         {
           id: 'twitter:image',
           name: 'twitter:image',
+          itemprop: 'image primaryImageOfPage',
           content: `${deploymentDomain}/favicon/favicon.png`
         },
       ],
