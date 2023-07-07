@@ -10,6 +10,28 @@ import {
 } from './assets/js/locales';
 
 export default defineNuxtConfig({
+
+  app: {
+    head: {
+      title: 'AnyBtcPay',
+      meta: [
+        {
+          charset: 'utf-8'
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1"
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon/favicon.ico'
+        },
+      ]
+    },
+  },
   
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,

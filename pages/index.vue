@@ -1,24 +1,25 @@
 <script setup>
-useHead({
-  title: 'AnyBtcPay',
-  meta: [
-    {
-      name: 'description',
-      content: `Accept shitcoins (crypto and fiat) on Btcpay Server`
-    },
-  ],
-});
+const {
+  locale: {
+    value: locale
+  },
+  t
+} = useI18n();
 
 definePageMeta({
   auth: false
 });
 
-
-const {
-  locale: {
-    value: locale
-  }
-} = useI18n();
+useHead({
+  // title: 'AnyBtcPay',
+  meta: [
+    {
+      id: 'description',
+      name: 'description',
+      content: t('seo.index')
+    },
+  ],
+});
 
 // redirect to locale only on the homepage
 // because i18n settings do not work
@@ -28,6 +29,6 @@ if (fullPath === '/') navigateTo(`/${locale}`);
 
 <template>
   <NuxtLayout>
-    <div>{{ $t('welcome') }}</div>
+    <div>{{ $t('seo.index') }}</div>
   </NuxtLayout>
 </template>

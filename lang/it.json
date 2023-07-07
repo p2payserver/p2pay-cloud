@@ -1,5 +1,4 @@
 {
-  "welcome": "Benvenuto",
   "login": "Accedi",
   "logout": "Esci",
   "homePage": "Pagina principale",
@@ -32,5 +31,8 @@
   "customRules": {
     "loginEmailRequired": "L'email è richiesta",
     "loginEmailValid": "{value} non è un indirizzo email valido"
+  },
+  "seo": {
+    "index": "Accetta shitcoin su Btcpay Server. Accetta pagamenti fiat e cripto, ma ricevi sempre bitcoin. Se sei un bitcoiner e orientato alla privacy, vivi in un paese sanzionato, sei coinvolto in attività legali ad alto rischio come la cannabis o la escort, o semplicemente vuoi espanderti nei mercati emergenti, potresti trovare AnyBtcPay vantaggioso per te. Combina il vantaggio del denaro resistente alla censura senza limitarti solo a questo metodo di pagamento.."
   }
 }
