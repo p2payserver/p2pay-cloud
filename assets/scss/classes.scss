@@ -74,3 +74,9 @@ div.media-content {
   color: $primary;
 }
 
+.ltr-sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+

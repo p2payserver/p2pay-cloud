@@ -5,7 +5,7 @@ const { data } = useAuth();
 </script>
 
 <template>
-  <section class="section">
+  <section class="section ltr-sticky">
     <OMenu>
       <OMenuList :label="data.user.email">
         <div 
@@ -37,11 +37,3 @@ const { data } = useAuth();
     </OMenu>
   </section>
 </template>
-
-<style scoped>
-.section {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-</style>
