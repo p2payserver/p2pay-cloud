@@ -9,11 +9,11 @@ const { status } = useAuth();
       <OButton
         class="disabled"
         variant="primary"
-        outlined
+        inverted
       >
         <span class="has-text-weight-bold">AnyBtcPay</span>
-        <span>&nbsp;</span>
-        <span>v0.3</span>
+        <!-- <span>&nbsp;</span>
+        <span>v0.3</span> -->
       </OButton>
     </div>
   </div>

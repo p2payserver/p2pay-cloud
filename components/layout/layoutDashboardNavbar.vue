@@ -39,7 +39,7 @@ onMounted(() => {
       <OButton
         class="disabled"
         variant="primary"
-        outlined
+        inverted
       >
         <span class="has-text-weight-bold">AnyBtcPay</span>
         <span>&nbsp;</span>
