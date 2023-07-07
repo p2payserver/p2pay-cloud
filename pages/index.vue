@@ -29,6 +29,13 @@ if (fullPath === '/') navigateTo(`/${locale}`);
 
 <template>
   <NuxtLayout>
-    <div>{{ $t('seo.index') }}</div>
+    <div class="hero is-fullheight">
+      <div class="hero-body is-justify-content-center">
+        <div class="has-text-centered">
+          <p class="title">{{ $t('seo.index').split('.')[0] }}</p>
+          <p class="subtitle">{{ $t('seo.index').split('.').slice(1).join('.') }}</p>
+        </div>
+      </div>
+    </div>
   </NuxtLayout>
 </template>
