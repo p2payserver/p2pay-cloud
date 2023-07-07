@@ -12,7 +12,7 @@ useHead({
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
-  addSeoAttributes: true
+  addSeoAttributes: false
 });
 </script>
 

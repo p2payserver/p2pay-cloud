@@ -7,8 +7,8 @@ const {
 } = useI18n();
 
 const { fullPath } = useRoute();
-const pagePath = fullPath.split('/').slice(3).join('/>/').split('/');
-const title = pagePath.map(segment => (segment === '>') ? segment : t(`menu.${segment}`)).join(' ');
+const pagePath = fullPath.split('/').slice(3);
+const title = pagePath.map(segment => t(`menu.${segment}`) ).join(' - ') || t('menu.dashboard');
 const i18nHead = useLocaleHead({});
 
 useHead({
@@ -23,7 +23,7 @@ useHead({
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
-  addSeoAttributes: true
+  addSeoAttributes: false
 });
 </script>
 
@@ -48,10 +48,19 @@ const head = useLocaleHead({
               </nav>
               <div class="column">
                 <section class="section">
-                  <div
+                  <nav
                     v-if="fullPath !== '/' + locale + '/dashboard'"
-                    class="title"
-                  >{{ title }}</div>
+                    class="breadcrumb"
+                  >
+                    <ul>
+                      <li
+                        v-for="segment in pagePath"
+                        class="is-active title"
+                      >
+                        <a>{{ $t(`menu.${segment}`) }}</a>
+                      </li>
+                    </ul>
+                  </nav>
                   <slot />
                 </section>
               </div>
