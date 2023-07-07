@@ -56,3 +56,10 @@ const logOut = async () => {
     </OMenu>
   </section>
 </template>
+
+<style scoped>
+.section {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
