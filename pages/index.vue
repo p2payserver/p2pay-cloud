@@ -10,13 +10,26 @@ definePageMeta({
   auth: false
 });
 
+const title = t('seo.index').split('.')[0]
+const description = t('seo.index').split('.').slice(1).join('.')
+
 useHead({
-  // title: 'AnyBtcPay',
+  title,
   meta: [
     {
       id: 'description',
       name: 'description',
-      content: t('seo.index')
+      content: description
+    },
+    {
+      id: 'og:title',
+      name: 'og:title',
+      content: title
+    },
+    {
+      id: 'og:description',
+      name: 'og:description',
+      content: description
     },
   ],
 });
@@ -32,8 +45,8 @@ if (fullPath === '/') navigateTo(`/${locale}`);
     <div class="hero is-fullheight">
       <div class="hero-body is-justify-content-center">
         <div class="has-text-centered">
-          <p class="title">{{ $t('seo.index').split('.')[0] }}</p>
-          <p class="subtitle">{{ $t('seo.index').split('.').slice(1).join('.') }}</p>
+          <p class="title">{{ title }}</p>
+          <p class="subtitle">{{ description }}</p>
         </div>
       </div>
     </div>
