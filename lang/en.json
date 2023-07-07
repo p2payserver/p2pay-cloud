@@ -5,9 +5,10 @@
   "admin": "Admin",
   "menu": {
     "dashboard": "Dashboard",
+    "general": "General",
     "invoices": "Invoices",
-    "booking": "Bookings",
     "shop": "Shop",
+    "booking": "Bookings",
     "settings": "Settings",
     "balance": "Balance",
     "payments": "Payments"

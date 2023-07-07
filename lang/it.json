@@ -5,9 +5,10 @@
   "admin": "Amministratore",
   "menu": {
     "dashboard": "Pannello di controllo",
+    "general": "Generale",
     "invoices": "Fatture",
-    "booking": "Prenotazioni",
     "shop": "Negozio",
+    "booking": "Prenotazioni",
     "settings": "Impostazioni",
     "balance": "Saldo",
     "payments": "Pagamenti"

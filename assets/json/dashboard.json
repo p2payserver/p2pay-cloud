@@ -1,5 +1,8 @@
 
 {
+  "menu.general": {
+    "menu.settings": "/dashboard/general/settings"
+  },
   "menu.invoices": {
     "menu.settings": "/dashboard/invoices/settings",
     "menu.payments": "/dashboard/invoices/payments",

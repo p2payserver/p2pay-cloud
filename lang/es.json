@@ -5,9 +5,10 @@
   "admin": "Admón",
   "menu": {
     "dashboard": "Panel de control",
+    "genral": "General",
     "invoices": "Facturación",
-    "booking": "Reservas",
     "shop": "Tienda",
+    "booking": "Reservas",
     "settings": "Configuración",
     "balance": "Saldo",
     "payments": "Pagos"
