@@ -38,10 +38,10 @@ onMounted(() => {
     <div class="navbar-item">
       <OButton
         class="disabled"
-        variant="primary"
+        variant="success"
         inverted
       >
-        <span class="has-text-weight-bold">AnyBtcPay</span>
+        <span class="has-text-weight-bold">AnyBTCPay</span>
         <span>&nbsp;</span>
         <span>{{ $t('menu.dashboard') }}</span>
       </OButton>

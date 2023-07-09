@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'AnyBtcPay',
+      title: 'AnyBTCPay',
       meta: [
         {
           charset: 'utf-8'
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
         {
           id: 'og:site_name',
           name: 'og:site_name',
-          content: 'AnyBtcPay'
+          content: 'AnyBTCPay'
         },
         {
           id: 'og:image',

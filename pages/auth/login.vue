@@ -92,7 +92,7 @@ const { loginEmail, magicLink, magicLinkInstructions } = $importAuthStrings(loca
       </OField>
     </VForm>
     <section class="section">
-      <div class="has-new-line">{{  magicLinkInstructions }}</div>
+      <div class="ltr-has-new-line">{{  magicLinkInstructions }}</div>
     </section>
   </div>
   </NuxtLayout>

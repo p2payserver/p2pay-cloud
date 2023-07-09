@@ -8,12 +8,12 @@ const { status } = useAuth();
     <div class="level-item">
       <OButton
         class="disabled"
-        variant="primary"
+        variant="success"
         inverted
       >
-        <span class="has-text-weight-bold">AnyBtcPay</span>
-        <!-- <span>&nbsp;</span>
-        <span>v0.3</span> -->
+        <span class="has-text-weight-bold">AnyBTCPay</span>
+        <span>&nbsp;</span>
+        <span>0.1</span>
       </OButton>
     </div>
   </div>

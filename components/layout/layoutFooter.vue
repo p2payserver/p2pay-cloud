@@ -10,11 +10,28 @@
       <div class="level-left">
         <div class="level-item">
           <OButton
+            :to="localePath('/documentation')"
+            tag="router-link"
+            variant="primary"
+            inverted
+          >{{ $t('footer.documentation') }}</OButton>
+        </div>
+        <div class="level-item">
+          <OButton
+            href="mailto:anybtcpay@learnetheropes.xyz"
+            tag="a"
+            target="_blank"
+            variant="primary"
+            inverted
+          >{{ $t('footer.support') }}</OButton>
+        </div>
+        <div class="level-item">
+          <OButton
             :to="localePath('/admin')"
             tag="router-link"
             variant="primary"
             inverted
-          >{{ $t('admin') }}</OButton>
+          >{{ $t('footer.admin') }}</OButton>
         </div>
       </div>
       <div class="level-right">
@@ -34,3 +51,10 @@
     </nav>
   </footer>
 </template>
+
+<style scoped>
+.footer {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+</style>

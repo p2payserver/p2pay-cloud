@@ -3,12 +3,12 @@
   "menu.general": {
     "menu.settings": "/dashboard/general/settings"
   },
-  "menu.invoices": {
+  "menu.invoicing": {
     "menu.settings": "/dashboard/invoices/settings",
     "menu.payments": "/dashboard/invoices/payments",
     "menu.balance": "/dashboard/invoices/balance"
   },
-  "menu.shop": {
+  "menu.shopping": {
     "menu.settings": "/dashboard/shop/settings",
     "menu.payments": "/dashboard/shop/payments",
     "menu.balance": "/dashboard/shop/balance"

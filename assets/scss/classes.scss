@@ -1,5 +1,5 @@
 
-.has-new-line {
+.ltr-has-new-line {
   white-space: pre-wrap;
 }
 
@@ -80,3 +80,42 @@ div.media-content {
   top: 0;
 }
 
+.ltr-equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ltr-full-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.ltr-main-content {
+  flex: 1;
+}
+
+// Replicate the bulma size classes for title and subtitle
+// because for some unknown reason they are ignored by default
+.is-1 {
+  font-size: 3rem;
+}
+.is-2 {
+  font-size: 2.5rem;
+}
+.is-3 {
+  font-size: 2rem;
+}
+.is-4 {
+  font-size: 1.5rem;
+}
+.is-5 {
+  font-size: 1.25rem;
+}
+.is-6 {
+  font-size: 1rem;
+}
+// This is a custom class
+.is-7 {
+  font-size: 0.75rem;
+}

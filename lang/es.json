@@ -2,12 +2,16 @@
   "login": "Iniciar sesión",
   "logout": "Salir",
   "homePage": "Página principal",
-  "admin": "Admón",
+  "footer": {
+    "documentation": "Documentation",
+    "support": "Soporte",
+    "admin": "Administrador"
+  },
   "menu": {
     "dashboard": "Panel de control",
     "general": "General",
-    "invoices": "Facturación",
-    "shop": "Tienda",
+    "invoicing": "Facturación",
+    "shopping": "Tienda",
     "booking": "Reservas",
     "settings": "Configuración",
     "balance": "Saldo",
@@ -33,7 +37,52 @@
     "loginEmailRequired": "El correo es requerido",
     "loginEmailValid": "{value} no es un correo electronico valido"
   },
-  "seo": {
-    "index": "Acepta shitcoins en el servidor Btcpay. Acepte pagos fiduciarios y criptográficos, pero siempre reciba bitcoins. Autocustodia, solución libre de kyc. Si usted es un bitcoiner y orientado a la privacidad, vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis o la escort, o simplemente desea expandirse en mercados emergentes, puede encontrar AnyBtcPay beneficioso para usted. Combine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago."
+  "index": {
+    "title": "Acepta shitcoins en BTCPay Server",
+    "description": "Acepte pagos de dinero por decreto criptomonedas sin kyc, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, o desea expandirse en mercados emergentes, puede encontrar AnyBTCPay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
+    "openSource": "Esta aplicación web es de código abierto con una licencia MIT. Puede inspeccionar clonar, modificar, implementar o distribuir el repositorio",
+    "here": "here",
+    "useCases": {
+      "title": "Casos de uso",
+      "bitcoiner": {
+        "title": "Entusiastas de Bitcoin",
+        "description": "Entiendes que Bitcoin es la mejor moneda jamás creada en la historia de la humanidad y no quieres tener ninguna otra moneda, pero al mismo tiempo sabes que Bitcoin no se usa ampliamente como deseas.\n\nAnyBTCPay te permite tener clientes del mundo tradicional pero al mismo tiempo evitar tocar sus shitcoins."
+      },
+      "highRisk": {
+        "title": "Empresas de alto riesgo",
+        "description": "Si está involucrado en industrias legales de alto riesgo como adultos, juegos de azar o cannabis, sabe lo difícil y costoso que es encontrar un procesador de pagos que lo acepte.\n\nCon la pasarela de pago AnyBTCPay puede comenzar a aceptar métodos de pago locales con unos pocos clics sin ningún requisito o verificación."
+      },
+      "sanctioned": {
+        "title": "No bancarizado - Sancionado",
+        "description": "Usted puede ser aislado del sistema bancario internacional por varias razones: usted vive en un país del tercer mundo o es ciudadano/residente de un país sancionado son sólo los dos ejemplos más comunes.\n\nEn cualquiera de estos casos, el procesador de pagos AnyBTCPay es probablemente su única oportunidad de acceder al mercado global y recibir pagos por sus servicios o productos."
+      }
+    },
+    "paymentMethods": {
+      "title": "Metodos de pago",
+      "bitcoin": {
+        "title": "Bitcoin",
+        "description": "En la blockchian\nLigthning Network"
+      },
+      "crypto": { 
+        "title": "Criptomonedas",
+        "description": "Ethereum\nDolares digitales"
+      },
+      "fiat": {
+        "title": "Dinero tradicional",
+        "description": "SEPA [EUR - Europa]\nSEPA [CHF - Suiza]\nPix [BRL - Brasil]"
+      }
+    },
+    "services": {
+      "title": "Servicios",
+      "invoicing": {
+        "description": "Facture a sus clientes por sus servicios/productos.\n\n Comparta el enlace de la factura por correo electrónico desde el panel de control o cópielo / péguelo donde prefiera, como Whatsapp / Signal."
+      },
+      "shopping": {
+        "description": "Integre AnyBTCPay con su comercio electrónico existente.\n\nSimplemente incruste AnyBTCPay con algunas consultas."
+      },
+      "booking": {
+        "description": "Utilice la aplicación integrada para permitir que su cliente reserve un lugar en su calendario.\n\nDesde una sesión de clase hasta una reserva de sala, esta es la forma más sencilla de recibir pagos por su calendario.\n\nAdmite eventos desde 1 minuto hasta varios días."
+      }
+    }
   }
 }

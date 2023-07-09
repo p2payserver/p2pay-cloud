@@ -39,8 +39,8 @@ const head = useLocaleHead({
         </template>
       </Head>
       <Body>
-        <div class="full-body container">
-          <main class="main-content">
+        <div class="ltr-full-body container">
+          <main class="ltr-main-content">
             <layoutDashboardNavbar />
             <div class="columns">
               <nav class="column is-narrow is-hidden-mobile">
@@ -72,14 +72,3 @@ const head = useLocaleHead({
     </Html>
   </div>
 </template>
-
-<style scoped>
-.full-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.main-content {
-  flex: 1;
-}
-</style>

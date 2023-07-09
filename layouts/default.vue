@@ -28,8 +28,8 @@ const head = useLocaleHead({
         </template>
       </Head>
       <Body>
-        <div class="full-body container">
-          <main class="main-content">
+        <div class="ltr-full-body container">
+          <main class="ltr-main-content">
               <LayoutPublicNavbar />
               <slot />
           </main>
@@ -46,13 +46,5 @@ const head = useLocaleHead({
     padding-left: 1rem;
     padding-right: 1rem;
   }
-}
-.full-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.main-content {
-  flex: 1;
 }
 </style>

@@ -2,12 +2,16 @@
   "login": "Log in",
   "logout": "Sign out",
   "homePage": "Home",
-  "admin": "Admin",
+  "footer": {
+    "documentation": "Documentation",
+    "support": "Support",
+    "admin": "Admin"
+  },
   "menu": {
     "dashboard": "Dashboard",
     "general": "General",
-    "invoices": "Invoices",
-    "shop": "Shop",
+    "invoicing": "Invoicing",
+    "shopping": "Shopping",
     "booking": "Bookings",
     "settings": "Settings",
     "balance": "Balance",
@@ -33,7 +37,52 @@
     "loginEmailRequired": "The email is required",
     "loginEmailValid": "{value} is not a valid email address"
   },
-  "seo": {
-    "index": "Accept shitcoins on Btcpay Server. Accept fiat and crypto payment, but always receive bitcoins. Self custodial, kyc free solution. If you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or escort, or you simply want to expand in emerging markets, you may find AnyBtcPay beneficial for you. Combine the benefit of censorship resistant hard money while not get limited only to this payment method."
+  "index": {
+    "title": "Accept shitcoins on BTCPay Server",
+    "description": "Accept fiat and crypto payment, but always receive bitcoins, without kyc.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or escort, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
+    "openSource": "This web app is open sourced with a MIT license. You can inspect, clone, modify, deploy or distribute the repo",
+    "here": "here",
+    "useCases": {
+      "title": "Use cases",
+      "bitcoiner": {
+        "title": "Bitcoin enthusiasts",
+        "description": "You understand that Bitcoin is the best currency ever created in the human history and you don't want to hold any other currency, but at the same time you know that Bitcoin is not widely used as you wish.\n\nAnyBTCPay allows you to have clients from the traditional world but at the same time to avoid to touch their shitcoins."
+      },
+      "highRisk": {
+        "title": "High risk businesses",
+        "description": "If you are involved in legal high risk industries such as adult, gambling or cannabis, you know how difficult and expensive is to find a payment processor that accepts you.\n\nWith AnyBTCPay payment gateway you can start accepting local payment methods with a few clicks without any requisites or verifications."
+      },
+      "sanctioned": {
+        "title": "Unbanked - Sanctioned",
+        "description": "You may be cut off from the international banking system for various reasons: you live in a third world country or you are citizen/resident of a sanction country are just the two more common examples.\n\nIn any of these cases, AnyBTCPay payment processor is probably your only chance to access the global market and get paid for your services or products."
+      }
+    },
+    "paymentMethods": {
+      "title": "Payment methods",
+      "bitcoin": {
+        "title": "Bitcoin",
+        "description": "On-chain\nLigthning Network"
+      },
+      "crypto": { 
+        "title": "Crypto",
+        "description": "Ethereum\nTheter dollars"
+      },
+      "fiat": {
+        "title": "Fiat",
+        "description": "SEPA [EUR - Europe]\nSEPA [CHF - Switzerland]\nPix [BRL - Brazil]"
+      }
+    },
+    "services": {
+      "title": "Services",
+      "invoicing": {
+        "description": "Invoice your clients for your services/products.\n\n Share the invoce link by email from the dashboard or copy/past it wherever you prefer such as Whatsapp/Signal."
+      },
+      "shopping": {
+        "description": "Integrate AnyBTCPay with your existing ecommerce.\n\nJust embed the AnyBTCPay with a few queries."
+      },
+      "booking": {
+        "description": "Use the built in application to let your client book a spot on your calendar.\n\nFrom a class session to a room booking, this is the easist way to get paid for your calendar.\n\nIt supports from event from 1 minute to multiple days."
+      }
+    }
   }
 }
