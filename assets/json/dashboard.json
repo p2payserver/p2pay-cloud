@@ -4,14 +4,14 @@
     "menu.settings": "/dashboard/general/settings"
   },
   "menu.invoicing": {
-    "menu.settings": "/dashboard/invoices/settings",
-    "menu.payments": "/dashboard/invoices/payments",
-    "menu.balance": "/dashboard/invoices/balance"
+    "menu.settings": "/dashboard/invoicing/settings",
+    "menu.payments": "/dashboard/invoicing/payments",
+    "menu.balance": "/dashboard/invoicing/balance"
   },
   "menu.shopping": {
-    "menu.settings": "/dashboard/shop/settings",
-    "menu.payments": "/dashboard/shop/payments",
-    "menu.balance": "/dashboard/shop/balance"
+    "menu.settings": "/dashboard/shopping/settings",
+    "menu.payments": "/dashboard/shopping/payments",
+    "menu.balance": "/dashboard/shopping/balance"
   },
   "menu.booking": {
     "menu.settings": "/dashboard/booking/settings",
