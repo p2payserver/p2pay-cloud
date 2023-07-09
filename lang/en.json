@@ -39,7 +39,7 @@
   },
   "index": {
     "title": "Accept shitcoins on BTCPay Server",
-    "description": "Accept fiat and crypto payment, but always receive bitcoins, without kyc.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or escort, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
+    "description": "Accept bitcoin, fiat and crypto payment, but always receive bitcoins, without kyc.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or escort, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
     "openSource": "This web app is open sourced with a MIT license. You can inspect, clone, modify, deploy or distribute the repo",
     "here": "here",
     "useCases": {
