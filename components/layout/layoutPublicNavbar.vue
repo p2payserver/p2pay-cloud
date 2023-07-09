@@ -23,7 +23,9 @@ const { status } = useAuth();
         :to="localePath('/dashboard')"
         tag="router-link"
         variant="primary"
-      >{{ (status === 'authenticated') ? $t('menu.dashboard') : $t('login') }}</OButton>
+        inverted
+      >{{ $t('menu.dashboard') }}</OButton>
+      <OButton @click="logOut">{{ $t('logout') }}</OButton>
     </div>
   </div>
 </nav>
