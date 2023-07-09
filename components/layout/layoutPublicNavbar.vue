@@ -1,5 +1,17 @@
 <script setup>
-const { status } = useAuth();
+const { status, signOut } = useAuth();
+
+const {
+  locale: {
+    value: locale
+  }
+} = useI18n();
+
+const logOut = async () => {
+  await signOut({
+    callbackUrl: `/${locale}`
+  });
+};
 </script>
 
 <template>
@@ -18,7 +30,7 @@ const { status } = useAuth();
     </div>
   </div>
   <div class="level-right">
-    <div class="level-item">
+    <div v-if="status === 'authenticated'" class="level-item">
       <OButton
         :to="localePath('/dashboard')"
         tag="router-link"
@@ -26,6 +38,13 @@ const { status } = useAuth();
         inverted
       >{{ $t('menu.dashboard') }}</OButton>
       <OButton @click="logOut">{{ $t('logout') }}</OButton>
+    </div>
+    <div v-else class="level-item">
+      <OButton
+        :to="localePath('/dashboard')"
+        tag="router-link"
+        variant="primary"
+      >{{ $t('login') }}</OButton>
     </div>
   </div>
 </nav>
