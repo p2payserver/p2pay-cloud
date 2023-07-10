@@ -3,11 +3,10 @@
     <LayoutPublicNavbar />
     <div class="hero is-fullheight">
       <div class="hero-body is-justify-content-center">
-        <div class="custom is-hidden-mobile">
-          <slot />
-        </div>
-        <div class="is-hidden-tablet">
-          <slot />
+        <div class="columns is-centered">
+          <div class="column is-two-third is-justify-content-center">
+            <slot />
+          </div>
         </div>
       </div>
     </div>
