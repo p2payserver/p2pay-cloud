@@ -1,4 +1,6 @@
 <script setup>
+const { fullPath } = useRoute();
+
 const { status, signOut } = useAuth();
 
 const {
@@ -29,7 +31,7 @@ const logOut = async () => {
       </OButton>
     </div>
   </div>
-  <div class="level-right">
+  <div v-if="!fullPath.startsWith('/auth/')" class="level-right">
     <div v-if="status === 'authenticated'" class="level-item">
       <OButton
         :to="localePath('/dashboard')"
@@ -51,8 +53,7 @@ const logOut = async () => {
 </template>
 
 <style scoped>
-  /* Same vertical padding as navbar
-  https://bulma.io/documentation/components/navbar/#variables */
+  /* Vertical padding to match the navbar */
 .level {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
