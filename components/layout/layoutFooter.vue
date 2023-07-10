@@ -18,12 +18,21 @@
         </div>
         <div class="level-item">
           <OButton
-            href="mailto:anybtcpay@learnetheropes.xyz"
+            href="mailto:anybtcpay@pm.me"
             tag="a"
             target="_blank"
             variant="primary"
             inverted
           >{{ $t('footer.support') }}</OButton>
+        </div>
+        <div class="level-item">
+          <OButton
+            href="https://keys.openpgp.org/vks/v1/by-fingerprint/C782373DA4CAD680B7BDEB97704E6E81850DB91E"
+            tag="a"
+            target="_blank"
+            variant="primary"
+            inverted
+          >PGP</OButton>
         </div>
         <div class="level-item">
           <OButton
