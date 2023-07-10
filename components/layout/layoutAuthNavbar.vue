@@ -1,4 +1,6 @@
 <script setup>
+const { fullPath } = useRoute();
+
 const { status, signOut } = useAuth();
 
 const {
@@ -27,24 +29,6 @@ const logOut = async () => {
         <span>&nbsp;</span>
         <span>0.1</span>
       </OButton>
-    </div>
-  </div>
-  <div class="level-right">
-    <div v-if="status === 'authenticated'" class="level-item">
-      <OButton
-        :to="localePath('/dashboard')"
-        tag="router-link"
-        variant="primary"
-        inverted
-      >{{ $t('menu.dashboard') }}</OButton>
-      <OButton @click="logOut">{{ $t('logout') }}</OButton>
-    </div>
-    <div v-else class="level-item">
-      <OButton
-        :to="localePath('/dashboard')"
-        tag="router-link"
-        variant="primary"
-      >{{ $t('login') }}</OButton>
     </div>
   </div>
 </nav>

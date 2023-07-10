@@ -3,7 +3,6 @@ import find from 'lodash.find';
 import { locales, defaultLocale } from '~/assets/js/locales'
 
 definePageMeta({
-  i18n: false,
   layout: "auth",
   auth: {
     unauthenticatedOnly: true,
@@ -11,6 +10,8 @@ definePageMeta({
   }
 });
 
+// redirect to locale
+// because nuxt-auth always redirect to the defaut one
 const { query } = useRoute();
 
 const locale = (
@@ -21,6 +22,10 @@ const locale = (
   ? query.callbackUrl.split('/')[3]
   : defaultLocale;
 
+console.log('locale', locale)
+const { fullPath } = useRoute();
+if (fullPath.split('?')[0] === '/auth/login') navigateTo(fullPath.replace(`/auth/login`, `/${locale}/auth/login`));
+
 const { signIn } = useAuth();
 
 const form = ref({
@@ -29,8 +34,8 @@ const form = ref({
 
 const validationSchema = {
   loginEmail: {
-    loginEmailRequired: locale,
-    loginEmailValid: locale
+    required: true,
+    email: true
   }
 };
 
@@ -48,9 +53,6 @@ const signInHandler = async () => {
     throw createError(error);
   }
 };
-
-const { $importAuthStrings } = useNuxtApp();
-const { loginEmail, magicLink, magicLinkInstructions } = $importAuthStrings(locale);
 </script>
 
 <template>
@@ -63,17 +65,17 @@ const { loginEmail, magicLink, magicLinkInstructions } = $importAuthStrings(loca
     >
       <VField
         name="loginEmail"
-        :label="loginEmail"
+        :label="$t('auth.loginEmail')"
         v-slot="{ handleChange, handleBlur, value, errors }"
         v-model="form.loginEmail"
       >
         <OField
-          :label="loginEmail"
+          :label="$t('auth.loginEmail')"
           :variant="errors[0] ? 'danger' : null"
           :message="errors[0] ? errors[0] : ''"
         >
           <OInput
-            :label="loginEmail"
+            :label="$t('auth.loginEmail')"
             :model-value="value"
             @update:modelValue="handleChange"
             @change="handleChange"
@@ -88,11 +90,11 @@ const { loginEmail, magicLink, magicLinkInstructions } = $importAuthStrings(loca
         <OButton
           native-type="submit"
           expanded
-        >{{ magicLink }}</OButton>
+        >{{ $t('auth.magicLink') }}</OButton>
       </OField>
     </VForm>
     <section class="section">
-      <div class="ltr-has-new-line">{{  magicLinkInstructions }}</div>
+      <div class="ltr-has-new-line">{{  $t('auth.magicLinkInstructions') }}</div>
     </section>
   </div>
   </NuxtLayout>

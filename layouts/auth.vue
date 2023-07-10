@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <LayoutPublicNavbar />
+    <LayoutAuthNavbar />
     <div class="hero is-fullheight">
       <div class="hero-body is-justify-content-center">
         <div class="columns is-centered">
@@ -12,9 +12,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-.custom {
-  max-width: 50%;
-}
-</style>

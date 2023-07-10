@@ -6,7 +6,6 @@ definePageMeta({
     navigateAuthenticatedTo: (locale) => `/${locale}/dashboard`
   }
 });
-
 </script>
 
 <template>
