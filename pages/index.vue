@@ -52,7 +52,7 @@ if (fullPath === '/') navigateTo(`/${locale}`);
               <NuxtLink
                 to="https://github.com/learntheropes/btcpay-any"
                 target="_blank"
-              >{{ $t('index.here') }}</NuxtLink>
+              >{{ $t('index.repo') }}</NuxtLink>
               .
             </div>
           </div>
