@@ -8,7 +8,8 @@ const {
 
 const { fullPath } = useRoute();
 const pagePath = fullPath.split('/').slice(3);
-const title = pagePath.map(segment => t(`menu.${segment}`) ).join(' - ') || t('menu.dashboard');
+const title = pagePath.map(segment => t(`menu.${segment}`)).join(' - ') || t('menu.dashboard');
+
 const i18nHead = useLocaleHead({});
 
 useHead({

@@ -8,8 +8,5 @@ definePageMeta({
 
 <template>
   <NuxtLayout>
-    <div class="title">
-      <section class="section is-medium">Active users</section>
-    </div>
   </NuxtLayout>
 </template>

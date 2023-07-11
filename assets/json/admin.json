@@ -1,7 +1,4 @@
 {
   "Settings": "/admin/settings",
-  "Accounts": {
-    "Active": "/admin/accounts/active",
-    "Inactive": "/admin/accounts/inactive"
-  }
+  "Users": "/admin/users"
 }

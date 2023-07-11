@@ -1,7 +1,12 @@
 <script setup>
+const { fullPath } = useRoute();
+const pagePath = fullPath.split('/').slice(3);
+const title = pagePath.map(segment => segment).join(' - ');
+
 const i18nHead = useLocaleHead({});
 
 useHead({
+  title: `Admin ${title}`,
   htmlAttrs: {
     lang: (i18nHead) ? i18nHead.value.htmlAttrs.lang : null
   },
@@ -38,6 +43,19 @@ const head = useLocaleHead({
               </nav>
               <div class="column">
                 <section class="section">
+                  <nav
+                    v-if="fullPath !== '/admin'"
+                    class="breadcrumb"
+                  >
+                    <ul>
+                      <li
+                        v-for="segment in pagePath"
+                        class="is-active title"
+                      >
+                        <a class="is-capitalized">{{ segment }}</a>
+                      </li>
+                    </ul>
+                  </nav>
                   <slot />
                 </section>
               </div>
