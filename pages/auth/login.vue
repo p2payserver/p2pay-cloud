@@ -22,7 +22,6 @@ const locale = (
   ? query.callbackUrl.split('/')[3]
   : defaultLocale;
 
-console.log('locale', locale)
 const { fullPath } = useRoute();
 if (fullPath.split('?')[0] === '/auth/login') navigateTo(fullPath.replace(`/auth/login`, `/${locale}/auth/login`));
 
