@@ -20,6 +20,8 @@ export default defineNuxtPlugin(nuxtApp => {
     return obj
   }, {});
 
+  console.log(localizeMessages)
+
   // configure localized messages
   configure({
     generateMessage: localize(localizeMessages),
