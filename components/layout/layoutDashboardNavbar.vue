@@ -69,7 +69,7 @@ onMounted(() => {
           variant="primary"
           inverted
         >{{ $t('homePage') }}</OButton>
-        <OButton @click="logOut">{{ $t('logout') }}</OButton>
+        <OButton @click="logOut">{{ $t('auth.logoutEmail') }}</OButton>
       </div>
     </div>
   </div>

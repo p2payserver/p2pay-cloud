@@ -37,14 +37,14 @@ const logOut = async () => {
         variant="primary"
         inverted
       >{{ $t('menu.dashboard') }}</OButton>
-      <OButton @click="logOut">{{ $t('logout') }}</OButton>
+      <OButton @click="logOut">{{ $t('auth.logoutEmail') }}</OButton>
     </div>
     <div v-else class="level-item">
       <OButton
         :to="localePath('/dashboard')"
         tag="router-link"
         variant="primary"
-      >{{ $t('login') }}</OButton>
+      >{{ $t('auth.loginEmail') }}</OButton>
     </div>
   </div>
 </nav>

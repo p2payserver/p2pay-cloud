@@ -1,6 +1,4 @@
 {
-  "login": "Accedi",
-  "logout": "Esci",
   "homePage": "Pagina principale",
   "footer": {
     "documentation": "Documentazione",
@@ -25,6 +23,7 @@
     "backToTheHomePage": "Tornare alla pagina principale"
   },
   "auth": {
+    "logoutEmail": "Esci",
     "loginEmail": "Accesso",
     "magicLink": "Invia collegamento magico per email",
     "magicLinkInstructions": "Non è richiesta alcuna password.\n\nTi invieremo un link magico per accedere via e-mail.\n\nSe utilizzi Slack, Notion o Wallet of Satoshi potresti avere familiarità con questo metodo di accesso.\n\nPer proteggere il tuo account, abilita 2FA sul tuo account email.",
