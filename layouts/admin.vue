@@ -6,7 +6,7 @@ const title = pagePath.map(segment => segment).join(' - ');
 const i18nHead = useLocaleHead({});
 
 useHead({
-  title: `Admin ${title}`,
+  title: `Admin: ${title}`,
   htmlAttrs: {
     lang: (i18nHead) ? i18nHead.value.htmlAttrs.lang : null
   },
