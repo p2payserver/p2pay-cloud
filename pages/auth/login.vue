@@ -12,7 +12,10 @@ definePageMeta({
 
 // redirect to locale
 // because nuxt-auth always redirect to the defaut one
-const { query } = useRoute();
+const { 
+  query,
+  fullPath
+ } = useRoute();
 
 const locale = (
   query
@@ -22,7 +25,6 @@ const locale = (
   ? query.callbackUrl.split('/')[3]
   : defaultLocale;
 
-const { fullPath } = useRoute();
 if (fullPath.split('?')[0] === '/auth/login') navigateTo(fullPath.replace(`/auth/login`, `/${locale}/auth/login`));
 
 const { signIn } = useAuth();

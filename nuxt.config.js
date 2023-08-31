@@ -7,6 +7,7 @@ const deploymentDomain = process.env.AUTH_ORIGIN || 'http://localhost:3000';
 import {
   locales,
   defaultLocale,
+  excludedRoutes
 } from './assets/js/locales';
 
 export default defineNuxtConfig({
@@ -98,7 +99,8 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/i18n',
-    '@sidebase/nuxt-auth'
+    '@sidebase/nuxt-auth',
+    'nuxt-delay-hydration'
   ],
 
   i18n: {
@@ -131,6 +133,12 @@ export default defineNuxtConfig({
       allow404WithoutAuth: true,
       addDefaultCallbackUrl: true
     },
+  },
+
+  delayHydration: {
+    mode: 'init',
+    exclude: excludedRoutes,
+    debug: process.env.NODE_ENV === 'development'
   },
 
   nitro: {

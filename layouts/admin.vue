@@ -38,7 +38,7 @@ const head = useLocaleHead({
             <div class="columns">
               <nav class="column is-narrow">
                 <section class="section is-medium">
-                  <layoutAdminSidebar />
+                  <LayoutAdminSidebar />
                 </section>
               </nav>
               <div class="column">

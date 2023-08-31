@@ -12,6 +12,7 @@
     "@nuxtjs/i18n": "^8.0.0-beta.12",
     "@sidebase/nuxt-auth": "^0.6.0-beta.3",
     "nuxt": "^3.6.1",
+    "nuxt-delay-hydration": "^1.2.1",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2"
   },
@@ -24,5 +25,8 @@
     "lodash.find": "^4.6.0",
     "nodemailer": "^6.9.3",
     "vee-validate": "^4.10.3"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

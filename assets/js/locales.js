@@ -25,5 +25,14 @@ export const locales = [
   }
 ];
 
+export const localeCodes = locales.map(locale => locale.code);
+
 export const defaultLocale = find(locales, { default: true }).code;
+
+export const excludedRoutes = localeCodes.reduce((arr, code) => {
+  ['auth', 'dashboard'].map(endpoint => {
+    arr.push(`/${code}/${endpoint}/**`);
+  });
+  return arr;
+}, []).concat(['admin']);
 
