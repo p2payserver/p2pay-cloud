@@ -107,6 +107,7 @@ export default defineNuxtConfig({
 
   robots: {
     disallow: excludedRoutes.map(route => route.replace('/**', '')),
+    sitemap: `${deploymentDomain}/sitemap_index.xml`
   },
 
   sitemap: {
