@@ -98,10 +98,22 @@ export default defineNuxtConfig({
   }],
 
   modules: [
+    'nuxt-simple-robots',
+    'nuxt-simple-sitemap',
     '@nuxtjs/i18n',
     '@sidebase/nuxt-auth',
     'nuxt-delay-hydration'
   ],
+
+  robots: {
+    disallow: excludedRoutes.map(route => route.replace('/**', '')),
+  },
+
+  sitemap: {
+    xsl: false,
+    exclude: excludedRoutes,
+    autoI18n: true
+  },
 
   i18n: {
     baseUrl: deploymentDomain,
