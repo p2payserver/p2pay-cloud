@@ -4,7 +4,6 @@
     "build": "nuxi build",
     "start": "nuxi start",
     "dev": "nuxi dev",
-    "generate": "nuxi generate",
     "preview": "nuxi preview",
     "prod": "nuxi build && nuxi start"
   },

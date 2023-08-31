@@ -1,28 +1,20 @@
 import { defineRule, configure } from "vee-validate";
 import { localize  } from '@vee-validate/i18n';
 import { required, email } from '@vee-validate/rules';
-import { locales } from '../assets/js/locales';
+
+import en from '@vee-validate/i18n/dist/locale/en.json';
+import es from '@vee-validate/i18n/dist/locale/es.json';
+import it from '@vee-validate/i18n/dist/locale/it.json'
 
 export default defineNuxtPlugin(nuxtApp => {
 
-  // import in parallel all the needed localized messages
-  // https://vitejs.dev/guide/features.html#glob-import-as
-  const modules = import.meta.glob('../node_modules/@vee-validate/i18n/dist/locale/*.json',  {
-    import: 'default',
-    as: 'raw',
-    eager: true
-  });
-  
-  // build the localization object
-  const localizeMessages = locales.reduce((obj, locale) => {
-
-    obj[locale.code] = JSON.parse(modules[`../node_modules/@vee-validate/i18n/dist/locale/${locale.validate}.json`])
-    return obj
-  }, {});
-
   // configure localized messages
   configure({
-    generateMessage: localize(localizeMessages),
+    generateMessage: localize({
+      en,
+      es,
+      it
+    }),
   });
 
   // Define default rules
