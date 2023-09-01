@@ -31,5 +31,5 @@ export const excludedRoutes = localeCodes.reduce((arr, code) => {
     arr.push(`/${code}/${endpoint}/**`);
   });
   return arr;
-}, []).concat(['/admin']);
+}, []).concat(['/admin/**']);
 
