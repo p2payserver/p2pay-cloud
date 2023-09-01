@@ -12,10 +12,6 @@ import {
 
 export default defineNuxtConfig({
 
-  site: {
-    debug: true
-  },
-
   app: {
     head: {
       title: 'AnyBTCPay',
