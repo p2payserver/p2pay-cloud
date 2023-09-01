@@ -26,8 +26,5 @@
     "lodash.find": "^4.6.0",
     "nodemailer": "^6.9.3",
     "vee-validate": "^4.10.3"
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
