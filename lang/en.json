@@ -8,8 +8,7 @@
   "menu": {
     "dashboard": "Dashboard",
     "general": "General",
-    "invoicing": "Invoicing",
-    "shopping": "Shopping",
+    "wallet": "Wallet",
     "booking": "Bookings",
     "settings": "Settings",
     "balance": "Balance",
@@ -83,5 +82,17 @@
         "description": "Use the built in application to let your client book a spot on your calendar.\n\nFrom a class session to a room booking, this is the easist way to get paid for your calendar.\n\nIt supports from event from 1 minute to multiple days."
       }
     }
+  },
+  "emoji": {
+    "searchEmojisInEnglish": "Search by emoji name",
+    "SmileysEmotion": "Smileys & Emotion",
+    "PeopleBody": "People & Body",
+    "AnimalsNature": "Animals & Nature",
+    "FoodDrink": "Food & Drink",
+    "TravelPlaces": "Travel & Places",
+    "Activities": "Activities",
+    "Objects": "Objects",
+    "Symbols": "Symbols",
+    "Flags": "Flags"
   }
 }

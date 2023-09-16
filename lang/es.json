@@ -8,8 +8,7 @@
   "menu": {
     "dashboard": "Panel de control",
     "general": "General",
-    "invoicing": "Facturación",
-    "shopping": "Tienda",
+    "wallet": "Biletera",
     "booking": "Reservas",
     "settings": "Configuración",
     "balance": "Saldo",
@@ -83,5 +82,17 @@
         "description": "Utilice la aplicación integrada para permitir que su cliente reserve un lugar en su calendario.\n\nDesde una sesión de clase hasta una reserva de sala, esta es la forma más sencilla de recibir pagos por su calendario.\n\nAdmite eventos desde 1 minuto hasta varios días."
       }
     }
+  },
+  "emoji": {
+    "searchEmojisInEnglish": "Buscar emoji por nombre inglés",
+    "SmileysEmotion": "Emoticonos y Emociones",
+    "PeopleBody": "Personas y Cuerpo",
+    "AnimalsNature": "Animales y Naturaleza",
+    "FoodDrink": "Comida y Bebida",
+    "TravelPlaces": "Viajes y Lugares",
+    "Activities": "Actividades",
+    "Objects": "Objetos",
+    "Symbols": "Simbolos",
+    "Flags": "Banderas"
   }
 }

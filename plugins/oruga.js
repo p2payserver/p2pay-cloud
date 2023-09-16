@@ -7,11 +7,12 @@ import {
   OMenuList,
   OMenuItem,
   OIcon,
+  OModal
   // Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
 
-// const myConfig = Object.assign(bulmaConfig, {
+// const customConfig = Object.assign(bulmaConfig, {
 //   notification: {
 //       ...bulmaConfig.notification,
 //       position: 'bottom-right'
@@ -26,5 +27,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OMenuList', OMenuList);
   nuxtApp.vueApp.component('OMenuItem', OMenuItem);
   nuxtApp.vueApp.component('OIcon', OIcon);
-  // nuxtApp.vueApp.use(Config, myConfig);
+  nuxtApp.vueApp.component('OModal', OModal);
+  // nuxtApp.vueApp.use(Config, customConfig);
 });

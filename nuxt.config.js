@@ -89,6 +89,7 @@ export default defineNuxtConfig({
 
   css: [
     '~/assets/scss/main.scss',
+    '~/assets/scss/mdi.scss'
   ],
 
   components: [{
@@ -98,6 +99,7 @@ export default defineNuxtConfig({
   }],
 
   modules: [
+    '@nuxt/content',
     'nuxt-simple-robots',
     'nuxt-simple-sitemap',
     '@nuxtjs/i18n',
@@ -156,18 +158,30 @@ export default defineNuxtConfig({
 
   nitro: {
     devStorage: {
-      db: {
+      lang: {
         driver: 'fs',
         base: './lang'
+      },
+      content: {
+        driver: 'fs',
+        base: './content'
       }
     },
     storage: {
-      db: {
-        driver: 'github',
+      lang: {
+        driver:'github',
         repo: process.env.GITHUB_REPO,
+        token: process.env.GITHUB_TOKEN,
         branch: 'main',
         dir: '/lang',
+      },
+      content: {
+        driver: 'github',
+        repo: process.env.GITHUB_REPO,
+        token: process.env.GITHUB_TOKEN,
+        branch: 'main',
+        dir: '/content',
       }
     },
-  }
+  },
 });

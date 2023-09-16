@@ -8,8 +8,7 @@
   "menu": {
     "dashboard": "Pannello di controllo",
     "general": "Generale",
-    "invoicing": "Fatturazione",
-    "shopping": "Negozio",
+    "wallet": "Portafogli",
     "booking": "Prenotazioni",
     "settings": "Impostazioni",
     "balance": "Saldo",
@@ -83,5 +82,17 @@
         "description": "Utilizza l'applicazione integrata per consentire ai tuoi clienti di prenotare uno spazio nel tuo calendario.\n\nDa una sessione di lezione privata alla prenotazione di una abitazione, questo è il modo più semplice per ricevere i pagamenti per il tuo calendario.\n\nSupporta eventi da 1 minuto a fino più giorni."
       }
     }
+  },
+  "emoji": {
+    "searchEmojisInEnglish": "Cerca emoji con il nome inglese",
+    "SmileysEmotion": "Emoticons e Emozioni",
+    "PeopleBody": "Persone e Corpo",
+    "AnimalsNature": "Animali e Natura",
+    "FoodDrink": "Alimenti e Bevande",
+    "TravelPlaces": "Viaggi e Luoghi",
+    "Activities": "Attività",
+    "Objects": "Oggetti",
+    "Symbols": "Simboli",
+    "Flags": "Bandiere"
   }
 }

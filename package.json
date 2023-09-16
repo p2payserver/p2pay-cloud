@@ -8,6 +8,8 @@
     "prod": "nuxi build && nuxi start"
   },
   "devDependencies": {
+    "@mdi/font": "^7.2.96",
+    "@nuxt/content": "^2.8.2",
     "@nuxtjs/i18n": "^8.0.0-beta.12",
     "@sidebase/nuxt-auth": "^0.6.0-beta.3",
     "nuxt": "^3.6.1",
@@ -23,7 +25,13 @@
     "@vee-validate/i18n": "^4.10.3",
     "@vee-validate/rules": "^4.10.3",
     "faunadb": "^4.8.0",
+    "fs-extra": "^11.1.1",
+    "klaw": "^4.1.0",
+    "lodash.filter": "^4.6.0",
     "lodash.find": "^4.6.0",
+    "lodash.merge": "^4.6.2",
+    "markdown-it": "^13.0.1",
+    "mitt": "^3.0.1",
     "nodemailer": "^6.9.3",
     "vee-validate": "^4.10.3"
   }
