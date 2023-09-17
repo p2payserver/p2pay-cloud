@@ -2,25 +2,27 @@ export default eventHandler(async event => {
 
   const { profile } = getQuery(event);
 
+  const { q, client } = getFauna();
+
   const { 
     ref: { 
       value: { 
         id 
       }
     }
-  } = await faunaClient.query(
-    faunaQ.Get(
-      faunaQ.Match(
-        faunaQ.Index('user_by_email'), 
+  } = await client.query(
+    q.Get(
+      q.Match(
+        q.Index('user_by_email'), 
         event.session.user.email
       )
     )
   );
 
-  await faunaClient.query(
-    faunaQ.Update(
-      faunaQ.Ref(
-        faunaQ.Collection('users'), 
+  await client.query(
+    q.Update(
+      q.Ref(
+        q.Collection('users'), 
         id
       ),
       {

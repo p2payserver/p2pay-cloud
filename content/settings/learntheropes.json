@@ -1,0 +1,50 @@
+{
+  "gateways": {
+    "bitcoin": true,
+    "fiat": true,
+    "crypto": false
+  },
+  "premium": 8,
+  "btcpay": {
+    "storeid": "FXpHszyuWAYdP362KaGzwkvtJDP1PdSB6oXGNRYqPp6v",
+    "host": "https://learntheropes.xyz",
+    "apikey": "09f4b9f5ffec84c3244acbb66f8d5e476216facc"
+  },
+  "concurrency": "serial",
+  "availability": [
+    {
+      "from": null,
+      "to": null
+    },
+    {
+      "from": 7,
+      "to": 15
+    },
+    {
+      "from": 8,
+      "to": 18
+    },
+    {
+      "from": 10,
+      "to": 13
+    },
+    {
+      "from": 9,
+      "to": 15
+    },
+    {
+      "from": 9,
+      "to": 15
+    },
+    {
+      "from": null,
+      "to": null
+    }
+  ],
+  "fields": {
+    "name": false,
+    "email": "required",
+    "pgp": true,
+    "details": true
+  }
+}

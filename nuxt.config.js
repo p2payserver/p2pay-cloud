@@ -75,6 +75,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     nextAuthSecret: process.env.NEXTAUTH_SECRET,
     faunaSecret: process.env.FAUNA_SECRET,
+    blockcypherToken: process.env.BLOCKCYPHER_TOKEN,
+    pusherSecret: process.env.PUSHER_SECRET,
     marangaduUser: process.env.MARANGADU_USER,
     marangaduPassword: process.env.MARANGADU_PASSWORD,
     marangaduHost: process.env.MARANGADU_HOST,
@@ -83,7 +85,10 @@ export default defineNuxtConfig({
     platformAdmins: process.env.PLATFORM_ADMINS.split(','),
     public: {
       isDeployed,
-      deploymentDomain
+      deploymentDomain,
+      pusherApikey: process.env.PUSHER_APIKEY,
+      pusherCluster: process.env.PUSHER_CLUSTER,
+      pusherAppId: process.env.PUSHER_APP_ID,
     },
   },
 

@@ -9,11 +9,11 @@ const {
 const email = auth.value.user.email;
 
 const initialForm = {
-  gateways: [
-    'bitcoin', 
-    'fiat', 
-    'crypto'
-  ],
+  gateways: {
+    bitcoin: true,
+    fiat: true,
+    crypto: true
+  },
   premium: 8,
   btcpay: {
     storeid: null,
@@ -49,11 +49,7 @@ const initialForm = {
     {
       from: null,
       to: null
-    },
-    {
-      from: null,
-      to: null
-    },
+    }
   ],
   fields: {
     name: false,

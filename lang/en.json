@@ -35,6 +35,12 @@
     "loginEmailRequired": "The email is required",
     "loginEmailValid": "{value} is not a valid email address"
   },
+  "emails": {
+    "fiatReleased": {
+      "subject": "Booking update - action required",
+      "content": "Bitcoins have been released.\nWe need one last click to confirm the booking.\nPlease visit {url} and click the \"Pay invoice\" button."
+    }
+  },
   "index": {
     "title": "Accept shitcoins on BTCPay Server",
     "description": "Accept bitcoin, fiat and crypto payment, but always receive bitcoins, without kyc.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
