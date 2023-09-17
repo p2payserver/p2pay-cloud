@@ -1,8 +1,6 @@
 <script setup>
 const {
-  locale: {
-    value: locale
-  },
+  locale,
   t
 } = useI18n();
 
@@ -50,7 +48,7 @@ const head = useLocaleHead({
               <div class="column">
                 <section class="section">
                   <nav
-                    v-if="fullPath !== '/' + locale + '/dashboard'"
+                    v-if="fullPath !== '/' + locale.value + '/dashboard'"
                     class="breadcrumb"
                   >
                     <ul>

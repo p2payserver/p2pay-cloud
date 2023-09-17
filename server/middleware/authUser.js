@@ -17,5 +17,6 @@ export default defineEventHandler(async (event) => {
     };
 
     event.session = session;
+    // event.session.user.email
   }
 });

@@ -3,6 +3,19 @@
     layout: "dashboard"
   });
 
+  // const { 
+  //   data: auth
+  // } = useAuth();
+  // const email = auth.value.user.email;
+
+  let profile;
+  try {
+    const { data } = await $fetch('/api/dashboard/fauna');
+    profile = data.bookingProfile;
+  } catch (error) {
+    profile = 'learntheropes'
+  }
+
   const { 
     params: { 
       service 
@@ -10,86 +23,86 @@
   } = useRoute();
 
   const { locale } = useI18n();
+
+  const initialForm = {
+    body: null
+  }
+
+  let userForm;
+  try {
+    userForm = await queryContent(`services/${profile}/${service}/${locale.value}`).findOne();
+  } catch (error) {
+    userForm = initialForm;
+  }
   
-  const body = ref('');
+  const form = ref(userForm);
 
-  onMounted(async () => {
-
-    let { description: initialBody } = await $fetch('/api/dashboard/content', {
-      query: {
-        path: `${locale.value}/services/learntheropes`,
-        slug: `${service}.json`
-      }
-    });
-    body.value = initialBody;
-
-  })
   const { $md } = useNuxtApp();
 
   const getSelection = (refs) => {
 
-    const start = refs.description.$refs.textarea.selectionStart;
-    const end = refs.description.$refs.textarea.selectionEnd;
-    return body.value.substring(start, end);
+    const start = refs.body.$refs.textarea.selectionStart;
+    const end = refs.body.$refs.textarea.selectionEnd;
+    return form.value.body.substring(start, end);
   }
 
   const replaceWith = (refs, replacement) => {
     const selection = getSelection(refs);
-    return body.value.replace(selection, replacement.replace(`{selection}`, selection))
+    return form.value.body.replace(selection, replacement.replace(`{selection}`, selection))
   };
 
   const formatBold = (refs) => {
-    body.value = replaceWith(refs, '**{selection}**')
+    form.value.body = replaceWith(refs, '**{selection}**')
   };
 
   const formatItalic = (refs) => {
-    body.value = replaceWith(refs, '*{selection}*')
+    form.value.body = replaceWith(refs, '*{selection}*')
   };
 
   const formatStrikeThrough = (refs) => {
-    body.value = replaceWith(refs, '~~{selection}~~')
+    form.value.body = replaceWith(refs, '~~{selection}~~')
   };  
   
   const formatHeader1 = (refs) => {
-    body.value = replaceWith(refs, '# {selection}')
+    form.value.body = replaceWith(refs, '# {selection}')
   };
 
   const formatHeader2 = (refs) => {
-    body.value = replaceWith(refs, '## {selection}')
+    form.value.body = replaceWith(refs, '## {selection}')
   };
 
   const formatHeader3 = (refs) => {
-    body.value = replaceWith(refs, '### {selection}')
+    form.value.body = replaceWith(refs, '### {selection}')
   };
 
   const formatHeader4 = (refs) => {
-    body.value = replaceWith(refs, '#### {selection}')
+    form.value.body = replaceWith(refs, '#### {selection}')
   };
 
   const formatHeader5 = (refs) => {
-    body.value = replaceWith(refs, '##### {selection}')
+    form.value.body = replaceWith(refs, '##### {selection}')
   };
 
   const formatHeader6 = (refs) => {
-    body.value = replaceWith(refs, '###### {selection}')
+    form.value.body = replaceWith(refs, '###### {selection}')
   };
 
   const formatListBullet = (refs) => {
     const selection = getSelection(refs);
     const replacement = selection.split('\n').map(line => `- ${line}`).join('\n');
-    body.value = body.value.replace(selection, replacement);
+    form.value.body = form.value.body.replace(selection, replacement);
   };
 
   const formatListNumbered = (refs) => {
     const selection = getSelection(refs);
     const replacement = selection.split('\n').map((line, index) => `${++index}. ${line}`).join('\n');
-    body.value = body.value.replace(selection, replacement);
+    form.value.body = form.value.body.replace(selection, replacement);
   };
 
   const formatQuote = (refs) => {
     const selection = getSelection(refs);
     const replacement = selection.split('\n').map(line => `> ${line}`).join('\n');
-    body.value = body.value.replace(selection, replacement); 
+    form.value.body = form.value.body.replace(selection, replacement); 
   };
 
   const { $listen } = useNuxtApp();
@@ -99,16 +112,29 @@
   const cursorEnd = ref(0);
 
   $listen('addEmoji', emoji => {
-    const left = body.value.substring(0, cursorStart.value);
-    const right = body.value.substring(cursorEnd.value, body.value.length);
-    body.value = left + emoji + right;
+    const left = form.value.body.substring(0, cursorStart.value);
+    const right = form.value.body.substring(cursorEnd.value, form.value.body.length);
+    form.value.body = left + emoji + right;
     isModalActive.value = false;
   });
 
   const openModal = (refs) => {
     isModalActive.value = true;
-    cursorStart.value = refs.description.$refs.textarea.selectionStart;
-    cursorEnd.value = refs.description.$refs.textarea.selectionEnd;
+    cursorStart.value = refs.body.$refs.textarea.selectionStart;
+    cursorEnd.value = refs.body.$refs.textarea.selectionEnd;
+  };
+
+  const updateService = async () => {
+    await $fetch('/api/dashboard/content', {
+      method: 'POST',
+      query: {
+        path: `services/${profile}`,
+        slug: `${locale.value}.json`
+      },
+      body: {
+        content: form.value
+      }
+    });
   };
 
 </script>
@@ -228,14 +254,15 @@
         </div>
       </div>
       <OInput 
-        ref="description"
+        ref="body"
         type="textarea"
-        v-model="body"
+        v-model="form.body"
+        :rows="10"
         :autosize="true"
       />
     </div>
     <div class="column is-half content">
-      <div v-html="$md().render(body.replaceAll('\n', '  \n'))" />
+      <div v-html="$md().render(form.body.replaceAll('\n', '  \n'))" />
     </div>
   </div>
 </NuxtLayout>

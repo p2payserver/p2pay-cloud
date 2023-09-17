@@ -62,7 +62,7 @@ export default NuxtAuthHandler({
             emailSubject,
             emailContent
           }
-        } = await useStorage('db').getItem(`${locale}.json`);
+        } = await useStorage('lang').getItem(`${locale}.json`);
 
         const { host } = new URL(url);
 

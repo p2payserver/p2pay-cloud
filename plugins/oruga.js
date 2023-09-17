@@ -7,7 +7,8 @@ import {
   OMenuList,
   OMenuItem,
   OIcon,
-  OModal
+  OModal,
+  OLoading
   // Config,
 } from '@oruga-ui/oruga-next';
 import { bulmaConfig } from '@oruga-ui/theme-bulma';
@@ -28,5 +29,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OMenuItem', OMenuItem);
   nuxtApp.vueApp.component('OIcon', OIcon);
   nuxtApp.vueApp.component('OModal', OModal);
+  nuxtApp.vueApp.component('OLoading', OLoading);
   // nuxtApp.vueApp.use(Config, customConfig);
 });

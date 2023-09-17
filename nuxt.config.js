@@ -104,6 +104,9 @@ export default defineNuxtConfig({
     'nuxt-simple-sitemap',
     '@nuxtjs/i18n',
     '@sidebase/nuxt-auth',
+    '@nuxt/image',
+    'nuxt-icons',
+    '@nuxtjs/device',
     'nuxt-delay-hydration'
   ],
 
@@ -148,6 +151,32 @@ export default defineNuxtConfig({
       allow404WithoutAuth: true,
       addDefaultCallbackUrl: true
     },
+  },
+
+  image: {
+    screens: {
+      avatar: 192,
+      preview: 192,
+    },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'webp',
+          width: 192,
+          height: 192,
+          quality: 70
+        }
+      },
+      preview: {
+        modifiers: {
+          format: 'webp',
+          fit: 'cover',
+          width: 192,
+          height: 192,
+          quality: 70
+        }
+      }
+    }
   },
 
   delayHydration: {
