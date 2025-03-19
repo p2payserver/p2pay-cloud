@@ -10,10 +10,8 @@ export default defineEventHandler(async (event) => {
     const session = await getServerSession(event);
 
     if (!session) {
-      throw createError({
-        statusMessage: 'Unauthenticated',
-        statusCode: 403
-      });
+      setResponseStatus(event, 403);
+      return 'Unauthenticated'
     };
 
     event.session = session;

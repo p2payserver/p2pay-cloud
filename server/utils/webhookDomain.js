@@ -18,17 +18,13 @@ export const getWebhookDomain = async () => {
   else {
 
     const apiUrl = ngrok.getUrl();
-    console.log('apiUrl', apiUrl)
 
     if (apiUrl) {
 
       const api = ngrok.getApi();
-      console.log('api', api)
       const tunnels = await api.listTunnels();
-      console.log('tunnels', tunnels)
 
       domain = tunnels.tunnels[0].public_url;
-      console.log('domain', domain)
     }
     else {
       const ngrokUrl = await ngrok.connect({
@@ -36,7 +32,6 @@ export const getWebhookDomain = async () => {
         region: 'eu'
       });
 
-      console.log('ngrokUrl', ngrokUrl)
       domain = ngrokUrl;
     }
   };

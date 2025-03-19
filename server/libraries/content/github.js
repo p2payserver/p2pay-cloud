@@ -103,16 +103,11 @@ export const getRepoFile = async ({ path }) => {
 
 export const addRepoMediaFile = async ({ path, content, message }) => {
 
-  console.log('addRepoFile')
-  // const binaryImageData = atob(content.split(',')[1]);
-  // content = btoa(binaryImageData);
-
   const base64Data = content.split(',')[1];
 
-// Convert base64 to binary data
-const binaryData = Buffer.from(base64Data, 'base64')
-content = binaryData.toString('base64')
-  console.log('content', typeof content)
+  // Convert base64 to binary data
+  const binaryData = Buffer.from(base64Data, 'base64');
+  content = binaryData.toString('base64');
   const url = getUrl(path);
   return await githubJson(url, {
     method: 'PUT',

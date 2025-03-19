@@ -23,10 +23,8 @@ export default defineEventHandler(async (event) => {
     const user = session.user.email;
 
     if (!platformAdmins.includes(user)) {
-      throw createError({
-        statusMessage: 'Unauthorized',
-        statusCode: 403
-      });
+      setResponseStatus(event, 403);
+      return 'Unauthenticated'
     };
 
     event.session = session

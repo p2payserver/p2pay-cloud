@@ -1,4 +1,9 @@
 {
+  "languages": [
+    "en",
+    "es",
+    "it"
+  ],
   "gateways": {
     "bitcoin": true,
     "fiat": true,

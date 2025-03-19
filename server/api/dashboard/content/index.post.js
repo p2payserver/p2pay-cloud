@@ -18,14 +18,16 @@ export default eventHandler(async event => {
     await updateMarkdown({
       path: `${path}/${slug}`,
       content,
-      message: `update file ${path}/${slug}`    });
+      message: `update file ${path}/${slug}`    
+    });
   } else if (contentType === 'image/webp') {
 
 
     await addMedia({
       path: `${path}/${slug}`,
       content,
-      message: `update file ${path}/${slug}`    });
+      message: `update file ${path}/${slug}`    
+    });
   } else {
 
     throw new Error('content type missing');

@@ -19,10 +19,11 @@ const logOut = async () => {
   <div class="level-left">
     <div class="level-item">
       <OButton
-        variant="success"
+        variant="primary"
         size="small"
+        :to="localePath('/')"
+        tag="router-link"
         inverted
-        disabled
       >
         <span class="has-text-weight-bold">Booking</span>
         <span>&nbsp;v0.1</span>

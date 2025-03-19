@@ -78,6 +78,16 @@ div.media-content {
 	color: white;
 }
 
+.ltr-full-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.ltr-main-content {
+  flex: 1;
+}
+
 // Class for the paid invoice icon with primary color
 .ltr-is-192by192-primary svg {
   min-height: 192px;
@@ -129,4 +139,10 @@ div.media-content {
   display: block;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.ltr-sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }

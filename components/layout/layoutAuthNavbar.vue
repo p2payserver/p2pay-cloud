@@ -3,7 +3,7 @@
     <div class="level-left">
       <div class="level-item">
         <OButton
-          variant="success"
+          variant="primary"
           size="small"
           inverted
           disabled

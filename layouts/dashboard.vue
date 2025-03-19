@@ -46,22 +46,20 @@ const head = useLocaleHead({
                 <layoutDashboardSidebar />
               </nav>
               <div class="column">
-                <section class="section">
-                  <nav
-                    v-if="fullPath !== '/' + locale.value + '/dashboard'"
-                    class="breadcrumb"
-                  >
-                    <ul>
-                      <li
-                        v-for="segment in pagePath"
-                        class="is-active title"
-                      >
-                        <a>{{ $t(`menu.${segment}`) }}</a>
-                      </li>
-                    </ul>
-                  </nav>
-                  <slot />
-                </section>
+                <nav
+                  v-if="fullPath !== '/' + locale.value + '/dashboard'"
+                  class="breadcrumb"
+                >
+                  <ul>
+                    <li
+                      v-for="segment in pagePath"
+                      class="is-active"
+                    >
+                      <a>{{ $t(`menu.${segment}`) }}</a>
+                    </li>
+                  </ul>
+                </nav>
+                <slot />
               </div>
             </div>
           </main>

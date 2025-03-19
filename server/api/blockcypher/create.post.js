@@ -13,7 +13,6 @@ export default eventHandler(async event => {
   } = await readBody(event);
 
   const webhookDomain = await getWebhookDomain();
-  console.log('webhookDomain', webhookDomain)
 
   return await ofetch(`https://api.blockcypher.com/v1/btc/main/hooks`, {
     method: 'POST',

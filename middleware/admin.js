@@ -7,10 +7,8 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     const { error } = await useFetch('/api/admin/user');
 
     if (error.value) {
-      throw createError({
-        statusCode: 403,
-        statusMessage: 'Unauthorized'
-      });
+      setResponseStatus(event, 403);
+      return 'Unauthenticated'
     };
 
     return;

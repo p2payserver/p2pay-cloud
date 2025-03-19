@@ -1,13 +1,25 @@
 <script setup>
 import dashboard from '~/assets/json/dashboard.json';
 
-const { data } = useAuth();
+let profile;
+try {
+  const { bookingProfile } = await $fetch('/api/dashboard/fauna');
+  profile = bookingProfile;
+} catch (error) {
+  profile = null;
+};
+
+const {
+  locale
+} = useI18n();
+
+const services = (profile) ? await queryContent(`services/${profile}`).find() : [];
 </script>
 
 <template>
-  <section class="section ltr-sticky">
+  <section class="ltr-sticky">
     <OMenu>
-      <OMenuList :label="data.user.email">
+      <OMenuList>
         <div 
           v-for="main in Object.keys(dashboard)" 
           :key="main"
@@ -33,6 +45,23 @@ const { data } = useAuth();
             :to="localePath(dashboard[main])"
           />
         </div>
+      </OMenuList>
+      <OMenuList>
+        <OMenuItem expanded>
+          <template
+            #label="props"
+          >{{ $t('sidebar.services') }}</template>
+          <div 
+            v-for="service of services" 
+            :key="service._path"
+          >
+            <OMenuItem
+              :label="service.title[locale]"
+              tag="router-link"
+              :to="localePath(`/dashboard/services/${service._path.replace(`/services/${profile}/`, '')}`)"
+            />
+          </div>
+        </OMenuItem>
       </OMenuList>
     </OMenu>
   </section>

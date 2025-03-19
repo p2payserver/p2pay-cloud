@@ -4,14 +4,12 @@ import dashboard from '~/assets/json/dashboard.json';
 const { signOut } = useAuth();
 
 const {
-  locale: {
-    value: locale
-  }
+  locale
 } = useI18n();
 
 const logOut = async () => {
   await signOut({
-    callbackUrl: `/${locale}`
+    callbackUrl: `/${locale.value}`
   });
 };
 
@@ -37,10 +35,11 @@ onMounted(() => {
   <div class="navbar-brand">
     <div class="navbar-item">
       <OButton
-        variant="success"
+        variant="primary"
         size="small"
+        :to="localePath('/')"
+        tag="router-link"
         inverted
-        disabled
       >
         <span class="has-text-weight-bold">Booking</span>
         <span>&nbsp;v0.1</span>
@@ -63,15 +62,16 @@ onMounted(() => {
           <NuxtLink :to="localePath(dashboard[main][item])" class="navbar-item">{{ $t(item) }}</NuxtLink>
         </div>
       </div>
+      
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
-        <OButton
+        <!-- <OButton
           :to="localePath('/')"
           tag="router-link"
           variant="primary"
           inverted
-        >{{ $t('homePage') }}</OButton>
+        >{{ $t('homePage') }}</OButton> -->
         <OButton @click="logOut">{{ $t('auth.logoutEmail') }}</OButton>
       </div>
     </div>

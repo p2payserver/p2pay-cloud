@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mdi-plus-circle::before {
+  content: "\F0417";
+}
+
 .mdi-format-bold::before {
   content: "\F0264";
 }

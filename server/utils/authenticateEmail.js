@@ -8,10 +8,8 @@ export const authenticateEmail = (event) => {
   pathSlugEmails.forEach(str => {
     const match = str.match(emailRegex);
     if (match !== event.session.user.email) {
-      throw createError({
-        statusMessage: 'Unauthenticated',
-        statusCode: 403
-      });
+      setResponseStatus(event, 403);
+      return 'Unauthenticated'
     }
   });
 }

@@ -22,6 +22,7 @@
     "sass-loader": "^13.3.2"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^3.8.0",
     "@mempool/mempool.js": "^2.3.0",
     "@nuxtjs/device": "^3.1.1",
     "@oruga-ui/oruga-next": "^0.6.0",
@@ -39,6 +40,7 @@
     "lodash.sortby": "^4.7.0",
     "markdown-it": "^13.0.1",
     "mitt": "^3.0.1",
+    "mongodb": "^6.15.0",
     "nodemailer": "^6.9.3",
     "nuxt-icons": "^3.2.1",
     "pusher": "^5.1.3",
