@@ -9,6 +9,8 @@
     "dashboard": "Panel de control",
     "general": "General",
     "wallet": "Biletera",
+    "invoicing": "Facturación",
+    "ecommerce": "Comercio electrónico",
     "booking": "Reservas",
     "settings": "Configuración",
     "balance": "Saldo",
@@ -42,8 +44,8 @@
     }
   },
   "index": {
-    "title": "Acepta shitcoins en BTCPay Server",
-    "description": "Acepte pagos en bitcoin, dinero tradicional y criptomonedas sin kyc, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, no estás bancarizado o vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, puede encontrar AnyBTCPay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
+    "title": "Acepta moneda de curso legal en BTCPay Server",
+    "description": "Acepte pagos en bitcoin y dinero tradicional sin kyc y de manera anonima, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, no estás bancarizado o vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, puede encontrar AnyBTCPay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
     "openSource": "Esta aplicación web es de código abierto con una licencia MIT. Puede inspeccionar clonar, modificar, implementar o distribuir el ",
     "repo": "repositorio",
     "useCases": {
@@ -67,13 +69,8 @@
         "title": "Bitcoin",
         "description": "En la blockchian\nLigthning Network"
       },
-      "crypto": { 
-        "title": "Criptomonedas",
-        "description": "Ethereum\nDolares digitales"
-      },
       "fiat": {
-        "title": "Dinero tradicional",
-        "description": "SEPA [EUR - Europa]\nSEPA [CHF - Suiza]\nPix [BRL - Brasil]"
+        "title": "Dinero tradicional"
       }
     },
     "services": {
@@ -82,7 +79,7 @@
         "description": "Facture a sus clientes por sus servicios/productos.\n\n Comparta el enlace de la factura por correo electrónico desde el panel de control o cópielo / péguelo donde prefiera, como Whatsapp / Signal."
       },
       "shopping": {
-        "description": "Integre AnyBTCPay con su comercio electrónico existente.\n\nSimplemente incruste AnyBTCPay con algunas consultas."
+        "description": "Integre P2Pay con su comercio electrónico existente."
       },
       "booking": {
         "description": "Utilice la aplicación integrada para permitir que su cliente reserve un lugar en su calendario.\n\nDesde una sesión de clase hasta una reserva de sala, esta es la forma más sencilla de recibir pagos por su calendario.\n\nAdmite eventos desde 1 minuto hasta varios días."

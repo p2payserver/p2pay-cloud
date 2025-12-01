@@ -18,7 +18,7 @@
         </div>
         <div class="level-item">
           <OButton
-            href="mailto:anybtcpay@pm.me"
+            href="mailto:server@p2pay.cloud"
             tag="a"
             target="_blank"
             variant="primary"
@@ -27,7 +27,7 @@
         </div>
         <div class="level-item">
           <OButton
-            href="https://keys.openpgp.org/vks/v1/by-fingerprint/C782373DA4CAD680B7BDEB97704E6E81850DB91E"
+            href="https://keys.openpgp.org/vks/v1/by-fingerprint/5BA78A510CDA44132BDC51FA58C798100FF8A743"
             tag="a"
             target="_blank"
             variant="primary"

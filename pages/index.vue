@@ -1,14 +1,11 @@
 <script setup>
+import startCase from 'lodash.startcase';
+
 definePageMeta({
   auth: false
 });
 
-const {
-  locale: {
-    value: locale
-  },
-  t
-} = useI18n();
+const { locale, t } = useI18n();
 
 const title = t('index.title');
 const description = t('index.description');
@@ -37,7 +34,13 @@ useHead({
 // redirect to locale only on the homepage
 // because i18n settings do not work
 const { fullPath } = useRoute();
-if (fullPath === '/') navigateTo(`/${locale}`);
+if (fullPath === '/') navigateTo(`/${locale.value}`);
+
+const paymentMethodsResponse = await $fetch('https://peach-cors-proxy.vercel.app/v1/info/paymentMethods')
+const paymentMethods = paymentMethodsResponse
+  .filter(method => !method.id.startsWith('cash.'))
+  .map(method => `${startCase(method.id)} (${method.currencies.join(', ')})`)
+  .join('\n');
 </script>
 
 <template>
@@ -62,20 +65,20 @@ if (fullPath === '/') navigateTo(`/${locale}`);
     <div class="section no-horizzontal-padding">
       <div class="title is-5 has-text-centered">{{ $t('index.useCases.title') }}</div>
       <div class="columns">
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-third is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('index.useCases.bitcoiner.title') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.useCases.bitcoiner.description') }}</div>
           </div>
         </div>
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-third is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('index.useCases.highRisk.title') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.useCases.highRisk.description') }}</div>
           </div>
         </div>
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-third is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('index.useCases.sanctioned.title') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.useCases.sanctioned.description') }}</div>     
           </div>
@@ -85,22 +88,16 @@ if (fullPath === '/') navigateTo(`/${locale}`);
     <div class="section no-horizzontal-padding">
       <div class="title is-5 has-text-centered">{{ $t('index.paymentMethods.title') }}</div>
       <div class="columns">
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-half is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('index.paymentMethods.bitcoin.title') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.paymentMethods.bitcoin.description') }}</div>
           </div>
         </div>
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
-            <div class="title is-4">{{ $t('index.paymentMethods.crypto.title') }}</div>
-            <div class="content ltr-has-new-line">{{ $t('index.paymentMethods.crypto.description') }}</div>
-            </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-half is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('index.paymentMethods.fiat.title') }}</div>
-            <div class="content ltr-has-new-line">{{ $t('index.paymentMethods.fiat.description') }}</div>     
+            <div class="content ltr-has-new-line">{{ paymentMethods }}</div>     
           </div>
         </div>
       </div>
@@ -108,20 +105,20 @@ if (fullPath === '/') navigateTo(`/${locale}`);
     <div class="section no-horizzontal-padding">
       <div class="title is-5 has-text-centered">{{ $t('index.services.title') }}</div>
       <div class="columns">
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-third is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('menu.invoicing') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.services.invoicing.description') }}</div>
           </div>
         </div>
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
-            <div class="title is-4">{{ $t('menu.shopping') }}</div>
+        <div class="column is-one-third is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
+            <div class="title is-4">{{ $t('menu.ecommerce') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.services.shopping.description') }}</div>
             </div>
         </div>
-        <div class="column is-one-third">
-          <div class="box ltr-equal-height">
+        <div class="column is-one-third is-flex is-flex-direction-column">
+          <div class="box is-flex is-flex-direction-column is-flex-grow-1">
             <div class="title is-4">{{ $t('menu.booking') }}</div>
             <div class="content ltr-has-new-line">{{ $t('index.services.booking.description') }}</div>     
           </div>

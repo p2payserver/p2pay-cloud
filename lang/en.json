@@ -9,6 +9,8 @@
     "dashboard": "Dashboard",
     "general": "General",
     "wallet": "Wallet",
+    "invoicing": "Invoicing",
+    "ecommerce": "Ecommerce",
     "booking": "Bookings",
     "settings": "Settings",
     "balance": "Balance",
@@ -42,8 +44,8 @@
     }
   },
   "index": {
-    "title": "Accept shitcoins on BTCPay Server",
-    "description": "Accept bitcoin, fiat and crypto payment, but always receive bitcoins, without kyc.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
+    "title": "Accept legal tenders on BTCPay Server",
+    "description": "Accept bitcoin and fiat payment, but always receive bitcoins, without kyc and anonymously.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
     "openSource": "This web app is open sourced with a MIT license. You can inspect, clone, modify, deploy or distribute the ",
     "repo": "repo",
     "useCases": {
@@ -67,13 +69,8 @@
         "title": "Bitcoin",
         "description": "On-chain\nLigthning Network"
       },
-      "crypto": { 
-        "title": "Crypto",
-        "description": "Ethereum\nTheter dollars"
-      },
       "fiat": {
-        "title": "Fiat",
-        "description": "SEPA [EUR - Europe]\nSEPA [CHF - Switzerland]\nPix [BRL - Brazil]"
+        "title": "Fiat"
       }
     },
     "services": {
@@ -82,7 +79,7 @@
         "description": "Invoice your clients for your services/products.\n\n Share the invoce link by email from the dashboard or copy/past it wherever you prefer such as Whatsapp/Signal."
       },
       "shopping": {
-        "description": "Integrate AnyBTCPay with your existing ecommerce.\n\nJust embed the AnyBTCPay with a few queries."
+        "description": "Integrate P2Pay with your existing ecommerce."
       },
       "booking": {
         "description": "Use the built in application to let your client book a spot on your calendar.\n\nFrom a class session to a room booking, this is the easist way to get paid for your calendar.\n\nIt supports from event from 1 minute to multiple days."
