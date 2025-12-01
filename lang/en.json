@@ -45,22 +45,22 @@
   },
   "index": {
     "title": "Accept legal tenders on BTCPay Server",
-    "description": "Accept bitcoin and fiat payment, but always receive bitcoins, without kyc and anonymously.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find AnyBTCPay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
+    "description": "Accept bitcoin and fiat payment, but always receive bitcoins, without kyc and anonymously.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find P2Pay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
     "openSource": "This web app is open sourced with a MIT license. You can inspect, clone, modify, deploy or distribute the ",
     "repo": "repo",
     "useCases": {
       "title": "Use cases",
       "bitcoiner": {
         "title": "Bitcoin enthusiasts",
-        "description": "You understand that Bitcoin is the best currency ever created in the human history and you don't want to hold any other currency, but at the same time you know that Bitcoin is not widely used as you wish.\n\nAnyBTCPay allows you to have clients from the traditional world but at the same time to avoid to touch their shitcoins."
+        "description": "You understand that Bitcoin is the best currency ever created in the human history and you don't want to hold any other currency, but at the same time you know that Bitcoin is not widely used as you wish.\n\nP2Pay allows you to have clients from the traditional world but at the same time to avoid to touch their shitcoins."
       },
       "highRisk": {
         "title": "High risk businesses",
-        "description": "If you are involved in legal high risk industries such as adult, gambling or cannabis, you know how difficult and expensive is to find a payment processor that accepts you.\n\nWith AnyBTCPay payment gateway you can start accepting local payment methods with a few clicks without any requisites or verifications."
+        "description": "If you are involved in legal high risk industries such as adult, gambling or cannabis, you know how difficult and expensive is to find a payment processor that accepts you.\n\nWith P2Pay payment gateway you can start accepting local payment methods with a few clicks without any requisites or verifications."
       },
       "sanctioned": {
         "title": "Unbanked - Sanctioned",
-        "description": "You may be cut off from the international banking system for various reasons: you live in a third world country or you are citizen/resident of a sanction country are just the two more common examples.\n\nIn any of these cases, AnyBTCPay payment processor is probably your only chance to access the global market and get paid for your services or products."
+        "description": "You may be cut off from the international banking system for various reasons: you live in a third world country or you are citizen/resident of a sanction country are just the two more common examples.\n\nIn any of these cases, P2Pay payment processor is probably your only chance to access the global market and get paid for your services or products."
       }
     },
     "paymentMethods": {

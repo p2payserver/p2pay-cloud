@@ -45,22 +45,22 @@
   },
   "index": {
     "title": "Acepta moneda de curso legal en BTCPay Server",
-    "description": "Acepte pagos en bitcoin y dinero tradicional sin kyc y de manera anonima, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, no estás bancarizado o vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, puede encontrar AnyBTCPay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
+    "description": "Acepte pagos en bitcoin y dinero tradicional sin kyc y de manera anonima, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, no estás bancarizado o vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, puede encontrar P2Pay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
     "openSource": "Esta aplicación web es de código abierto con una licencia MIT. Puede inspeccionar clonar, modificar, implementar o distribuir el ",
     "repo": "repositorio",
     "useCases": {
       "title": "Casos de uso",
       "bitcoiner": {
         "title": "Entusiastas de Bitcoin",
-        "description": "Entiendes que Bitcoin es la mejor moneda jamás creada en la historia de la humanidad y no quieres tener ninguna otra moneda, pero al mismo tiempo sabes que Bitcoin no se usa ampliamente como deseas.\n\nAnyBTCPay te permite tener clientes del mundo tradicional pero al mismo tiempo evitar tocar sus shitcoins."
+        "description": "Entiendes que Bitcoin es la mejor moneda jamás creada en la historia de la humanidad y no quieres tener ninguna otra moneda, pero al mismo tiempo sabes que Bitcoin no se usa ampliamente como deseas.\n\nP2Pay te permite tener clientes del mundo tradicional pero al mismo tiempo evitar tocar sus shitcoins."
       },
       "highRisk": {
         "title": "Empresas de alto riesgo",
-        "description": "Si está involucrado en industrias legales de alto riesgo como adultos, juegos de azar o cannabis, sabe lo difícil y costoso que es encontrar un procesador de pagos que lo acepte.\n\nCon la pasarela de pago AnyBTCPay puede comenzar a aceptar métodos de pago locales con unos pocos clics sin ningún requisito o verificación."
+        "description": "Si está involucrado en industrias legales de alto riesgo como adultos, juegos de azar o cannabis, sabe lo difícil y costoso que es encontrar un procesador de pagos que lo acepte.\n\nCon la pasarela de pago P2Pay puede comenzar a aceptar métodos de pago locales con unos pocos clics sin ningún requisito o verificación."
       },
       "sanctioned": {
         "title": "No bancarizado - Sancionado",
-        "description": "Usted puede ser aislado del sistema bancario internacional por varias razones: usted vive en un país del tercer mundo o es ciudadano/residente de un país sancionado son sólo los dos ejemplos más comunes.\n\nEn cualquiera de estos casos, el procesador de pagos AnyBTCPay es probablemente su única oportunidad de acceder al mercado global y recibir pagos por sus servicios o productos."
+        "description": "Usted puede ser aislado del sistema bancario internacional por varias razones: usted vive en un país del tercer mundo o es ciudadano/residente de un país sancionado son sólo los dos ejemplos más comunes.\n\nEn cualquiera de estos casos, el procesador de pagos P2Pay es probablemente su única oportunidad de acceder al mercado global y recibir pagos por sus servicios o productos."
       }
     },
     "paymentMethods": {
