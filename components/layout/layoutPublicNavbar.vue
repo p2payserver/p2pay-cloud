@@ -24,12 +24,12 @@ const logOut = async () => {
         :to="localePath('/')"
         tag="router-link"
         inverted
+        class="has-text-left"
       >
-        <span class="has-text-weight-bold">Booking</span>
-        <span>&nbsp;v0.1</span>
+        <span class="has-text-weight-bold">&nbsp;P2Pay</span>
         <br>
-        <span>@</span>
-        <span class="has-text-weight-bold">&nbsp;AnyBTCPay</span>
+        <span class="has-text-weight-bold">Cloud</span>
+        <span>&nbsp;v0.1</span>
       </OButton>
     </div>
   </div>
