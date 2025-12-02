@@ -1,37 +1,11 @@
 <script setup>
-  definePageMeta({
-    layout: 'public',
-    auth: false
-  });
-
-  const { 
-    params: {
-      profile,
-      service 
-    }
-  } = useRoute();
-
+  definePageMeta({ layout: 'public', auth: false });
+  const { params: { profile, service }} = useRoute();
   const { locale } = useI18n();
-
-  const  {
-    title,
-    disabled,
-    description,
-    image,
-    extras,
-    body,
-    gallery
-  } = await queryContent(`/services/${profile}/${service}/${locale.value}`).findOne();
-
+  const { title, description, image, extras, body, gallery } = await queryContent(`/services/${profile}/${service}/${locale.value}`).findOne();
   if (!title && !body) throw createError({ statusCode: 404 })
-
   const isLoading = ref(false);
-
-  const { 
-    public: {
-      deploymentDomain
-    }
-  } = useRuntimeConfig();
+  const { public: { deploymentDomain }} = useRuntimeConfig();
 
   useHead({
     meta: [
@@ -58,10 +32,7 @@
     ]
   })
 
-  useContentHead({
-    title, 
-    description
-  });
+  useContentHead({ title, description });
 </script>
 
 <template>

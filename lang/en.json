@@ -44,8 +44,8 @@
     }
   },
   "index": {
-    "title": "Accept legal tenders on BTCPay Server",
-    "description": "Accept bitcoin and fiat payment, but always receive bitcoins, without kyc and anonymously.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find P2Pay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
+    "title": "Accept fiat on BTCPay Server",
+    "description": "Accept bitcoin and legal tender payment, but always receive bitcoins, without kyc and anonymously.\n\nIf you are a bitcoiner and privacy-oriented, you live n a sanctioned country, you are involved in legal high risk business like cannabis or adult, or you simply want to expand in emerging markets, you may find P2Pay beneficial for you.\n\nCombine the benefit of censorship resistant hard money while not get limited only to this payment method.",
     "openSource": "This web app is open sourced with a MIT license. You can inspect, clone, modify, deploy or distribute the ",
     "repo": "repo",
     "useCases": {

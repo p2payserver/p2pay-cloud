@@ -44,8 +44,8 @@
     }
   },
   "index": {
-    "title": "Acepta moneda de curso legal en BTCPay Server",
-    "description": "Acepte pagos en bitcoin y dinero tradicional sin kyc y de manera anonima, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, no estás bancarizado o vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, puede encontrar P2Pay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
+    "title": "Acepta moneda fiat en BTCPay Server",
+    "description": "Acepte pagos en bitcoin y moneda de curso legal sin kyc y de manera anonima, siempre recibiendo bitcoins.\nSi usted es un bitcoiner y orientado a la privacidad, no estás bancarizado o vive en un país sancionado, está involucrado en negocios legales de alto riesgo como el cannabis, juegos o industria por adultos, puede encontrar P2Pay beneficioso para usted.\nCombine el beneficio del dinero resistente a la censura sin limitarse solo a este método de pago.",
     "openSource": "Esta aplicación web es de código abierto con una licencia MIT. Puede inspeccionar clonar, modificar, implementar o distribuir el ",
     "repo": "repositorio",
     "useCases": {

@@ -113,8 +113,17 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-icons',
     '@nuxtjs/device',
-    'nuxt-delay-hydration'
+    'nuxt-delay-hydration',
+    '@nuxthub/core'
   ],
+
+  hub: {
+    blob: true,
+    cache: true,
+    database: true,
+    kv: false,
+    remote: process.env.NUXT_HUB_REMOTE === 'true',
+  },
 
   robots: {
     disallow: excludedRoutes.map(route => route.replace('/**', '')),
@@ -192,6 +201,8 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'cloudflare_module',
+    external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
     devStorage: {
       lang: {
         driver: 'fs',
