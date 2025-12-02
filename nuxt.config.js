@@ -202,7 +202,11 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'cloudflare_module',
-    external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
+    output: {
+      dir: 'server/dist',      // => server/dist/index.mjs + server/dist/public/*
+      publicDir: 'public'
+    },
+    // external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
     devStorage: {
       lang: {
         driver: 'fs',
