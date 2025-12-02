@@ -25,12 +25,12 @@ jobs:
         run: npm install
 
       - name: Ensure NuxtHub module is installed
-        run: npx nuxthub@latest ensure
+        run: npx nuxthub@latest ensure --ci
 
       - name: Build & Deploy to NuxtHub
         uses: nuxt-hub/action@v2
         with:
           project-key: p2pay-cloud-80n5
-          # don't set build, build-command or output-directory
-          # the action will internally run `npx nuxthub build`
-          # and deploy the resulting `dist` folder
+          build: true
+          build-command: npx nuxthub build
+          output-directory: dist
