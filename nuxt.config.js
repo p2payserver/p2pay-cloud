@@ -83,7 +83,7 @@ export default defineNuxtConfig({
     marangaduHost: process.env.MARANGADU_HOST,
     marangaduPort: process.env.MARANGADU_PORT,
     marangaduFrom: process.env.MARANGADU_FROM,
-    platformAdmins: process.env.PLATFORM_ADMINS.split(','),
+    platformAdmins: (process.env.PLATFORM_ADMINS || '').split(',').map(v => v.trim()).filter(Boolean),
     public: {
       isDeployed,
       deploymentDomain,
