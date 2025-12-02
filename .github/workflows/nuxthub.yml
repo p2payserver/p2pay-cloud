@@ -1,10 +1,16 @@
 name: Deploy to NuxtHub
-on: push
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
     name: "Deploy to NuxtHub"
     runs-on: ubuntu-latest
+    environment:
+      name: production
     permissions:
       contents: read
       id-token: write
@@ -18,19 +24,21 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Ensure NuxtHub module is installed
-        run: npx nuxthub@latest ensure --ci
+      - name: Build
+        run: npm run build
+        env:
+          # IMPORTANT: build locally, don't use remote hub preset
+          NUXT_HUB_REMOTE: false
 
-      - name: Build & Deploy to NuxtHub
+      - name: Deploy to NuxtHub
         uses: nuxt-hub/action@v2
         with:
           project-key: p2pay-cloud-80n5
-          build: true
-          build-command: npx nuxthub build
-          output-directory: dist
+          # optional, default is "dist" anyway, but can be explicit:
+          # output-directory: dist
