@@ -18,27 +18,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20   # same as your working project
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build (local, no remote storage)
         run: npm run build
         env:
-          # IMPORTANT: build locally, don't use remote hub preset
           NUXT_HUB_REMOTE: false
 
       - name: Deploy to NuxtHub
         uses: nuxt-hub/action@v2
         with:
           project-key: p2pay-cloud-80n5
-          # optional, default is "dist" anyway, but can be explicit:
-          # output-directory: dist
+          # root of the Nuxt app (your repo root)
+          directory: .
+          # where Nitro + NuxtHub is actually outputting the build
+          output-directory: server/dist
