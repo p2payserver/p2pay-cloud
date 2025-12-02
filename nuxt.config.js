@@ -201,8 +201,8 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    // preset: 'cloudflare_module',
-    // external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
+    preset: 'cloudflare_module',
+    external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
     devStorage: {
       lang: {
         driver: 'fs',
