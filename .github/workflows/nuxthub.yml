@@ -31,8 +31,6 @@ jobs:
         uses: nuxt-hub/action@v2
         with:
           project-key: p2pay-cloud-80n5
-          # NuxtHub/Nitro build output is in server/dist, not dist
-          output-directory: server/dist
-          # build is true by default, but we can be explicit if you like:
-          build: true
-          build-command: npm run build
+          # don't set build, build-command or output-directory
+          # the action will internally run `npx nuxthub build`
+          # and deploy the resulting `dist` folder
