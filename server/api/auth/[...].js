@@ -1,6 +1,5 @@
 import { NuxtAuthHandler } from '#auth';
-import { MongoClient, ServerApiVersion } from "mongodb";
-import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import { NuxtHubD1Adapter } from '../../utils/nuxtHubD1Adapter'
 import EmailProvider from "next-auth/providers/email";
 import nodemailer from 'nodemailer';
 import { locales, defaultLocale } from '~/assets/js/locales';
@@ -9,7 +8,6 @@ import find from 'lodash.find';
 const {
   // isDeployed,
   nextAuthSecret, 
-  mongodbUri,
   marangaduUser,
   marangaduPassword,
   marangaduHost,
@@ -17,30 +15,6 @@ const {
   marangaduFrom,
 } = useRuntimeConfig();
 
-
-const options = {
-  tls: true,
-  maxPoolSize: 5,
-  // serverSelectionTimeoutMS: 5000,
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-};
-
-let clientPromise;
-
-if (process.env.NODE_ENV === "development") {
-  if (!global._mongoClientPromise) {
-    const client = new MongoClient(mongodbUri, options);
-    global._mongoClientPromise = client.connect();
-  }
-  clientPromise = global._mongoClientPromise;
-} else {
-  const client = new MongoClient(mongodbUri, options);
-  clientPromise = client.connect();
-}
 
 export default NuxtAuthHandler({
   // debug: (isDeployed) ? false : true,
@@ -119,5 +93,8 @@ export default NuxtAuthHandler({
       },
     })
   ],
-  adapter: MongoDBAdapter(clientPromise)
+  adapter: NuxtHubD1Adapter(),
+  session: {
+    strategy: 'database'
+  },
 });

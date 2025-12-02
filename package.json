@@ -23,6 +23,7 @@
     "sass-loader": "^13.3.2"
   },
   "dependencies": {
+    "@auth/d1-adapter": "^1.11.1",
     "@auth/mongodb-adapter": "^3.8.0",
     "@mempool/mempool.js": "^2.3.0",
     "@nuxthub/core": "^0.9.1",
