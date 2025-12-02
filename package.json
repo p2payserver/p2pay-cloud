@@ -1,11 +1,10 @@
 {
   "private": true,
   "scripts": {
+    "dev": "NUXT_HUB_REMOTE=true nuxi dev --remote",
     "build": "nuxi build",
     "start": "nuxi start",
-    "dev": "nuxi dev",
-    "preview": "nuxi preview",
-    "prod": "nuxi build && nuxi start"
+    "generate": "nuxi generate"
   },
   "devDependencies": {
     "@mdi/font": "^7.2.96",
